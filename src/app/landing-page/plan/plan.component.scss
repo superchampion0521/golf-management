@@ -1,0 +1,109 @@
+$title-color: #FFFFFF;
+$border-color: #F9F9F9;
+
+button {
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+button.inner {
+    background-color: #08ABF0;
+    color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #08ABF0;
+}
+
+button.outer {
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #08ABF0;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.splash {
+    width: 100%;
+    background-image: url('/assets/images/home/plan.png');
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    z-index: -1;
+    padding: 250px 100px !important;
+}
+
+.splash h1 {
+    font-family: 'Bebas Neue';
+    font-size: 100px;
+    color: $title-color;
+}
+
+.content .card {
+    border-color: $border-color;
+    margin: 1px;
+    border-radius: 0px;
+    width: 20%;
+}
+
+.content .card .card-header {
+    background-color: #FFFFFF;
+    font-family: 'Myriad Pro';
+    color: #08ABF0;
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 25px 0px;
+    border-width: 0px;
+    height: 85px;
+    text-align: center;
+}
+
+.content .card .card-body {
+    padding: 0px;
+}
+.content .card .card-body ul {
+    list-style: none;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+.content .card .card-body ul li {
+    border-bottom: 1px solid $border-color;
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 10px 0px;
+}
+.content .card .card-body ul li.checked {
+    color: #B3BD02;
+}
+.content .card .card-body ul li.unchecked {
+    color: #F33E19;
+}
+
+.content .card .card-footer {
+    background-color: #F9F9F9;
+    border-width: 0px;
+    padding: 20px;
+    text-align: center;
+}
+.content .card .card-footer .info {
+    font-family: 'Myriad Pro Semibold';
+    font-size: 12px;
+    vertical-align: middle;
+    display: table-cell;
+    height: 80px;
+}
+
+.content .card.basic, 
+.content .card.standard, 
+.content .card.premium {
+    top: -85px;
+}
+
+.content .card.plans {
+    height: 100%;
+}
