@@ -90,12 +90,35 @@ button.outer {
     padding: 20px;
     text-align: center;
 }
-.content .card .card-footer .info {
+.content .card .card-footer .info,
+.content .card .card-footer .info.price {
     font-family: 'Myriad Pro Semibold';
     font-size: 12px;
-    vertical-align: middle;
-    display: table-cell;
+    display: table;
     height: 80px;
+    width: 100%;
+}
+.content .card .card-footer .info div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content .card .card-footer .info.price div {
+    display: table-cell;
+    vertical-align: bottom;
+}
+.content .card .card-footer .info.price div .currency {
+    font-family: 'Myriad Pro Semibold';
+    font-size: 40px;
+}
+.content .card .card-footer .info.price div .money {
+    font-family: 'Myriad Pro Bold';
+    font-weight: bolder;
+    font-size: 48px;
+}
+.content .card .card-footer .info.price div .period {
+    font-family: 'Myriad Pro Regular';
+    font-size: 22px;
 }
 
 .content .card.basic, 
