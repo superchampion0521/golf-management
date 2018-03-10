@@ -1,5 +1,11 @@
 $title-color: #FFFFFF;
 
+@media (max-width: 576px) {
+    .splash {
+        padding: 250px 0px !important;
+    }
+}
+
 .splash {
     width: 100%;
     background-image: url('/assets/images/home/stats.png');
@@ -9,41 +15,43 @@ $title-color: #FFFFFF;
     -o-background-size: cover;
     z-index: -1;
     padding: 250px 100px !important;
-}
 
-.splash h1 {
-    font-family: 'Bebas Neue';
-    font-size: 100px;
-    color: $title-color;
+    & h1 {
+        font-family: 'Bebas Neue';
+        font-size: 100px;
+        color: $title-color;
+    }
 }
 
 .content {
     padding-bottom: 100px;
     margin-bottom: -250px;
-}
 
-.content .about {
-    width: 40%;
-    padding: 100px !important;
-    height: 100%;
-}
-.content .about h2 {
-    font-family: 'Myriad Pro Semibold';
-    font-size: 32px;
-}
-.content .about p {
-    font-family: 'Myriad Pro Light, Brandon Grotesque-Light';
-    font-size: 18px;
-    margin-top: 60px;
-}
+    & .about {
+        width: 40%;
+        padding: 100px !important;
+        height: 100%;
 
-.content .portfolio {
-    width: 60%;
-    top: -250px;
-    margin-right: 100px;
-    position: relative;
-}
+        & h2 {
+            font-family: 'Myriad Pro Semibold';
+            font-size: 32px;
+        }
 
-.content .portfolio img {
-    width: 100%;
+        & p {
+            font-family: 'Myriad Pro Light, Brandon Grotesque-Light';
+            font-size: 18px;
+            margin-top: 60px;
+        }
+    }
+
+    & .portfolio {
+        width: 60%;
+        top: -250px;
+        margin-right: 100px;
+        position: relative;
+
+        & img {
+            width: 100%;
+        }
+    }
 }
