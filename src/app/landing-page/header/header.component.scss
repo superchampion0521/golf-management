@@ -1,0 +1,94 @@
+.splash {
+    width: 100%;
+    background-image: url('/assets/images/home/home.png');
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    z-index: -1;
+}
+
+.splash .menu nav {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-family: 'Myriad Pro Regular';
+    padding: 25px;
+}
+
+.splash .menu nav .navbar-brand {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-family: 'Myriad Pro Light';
+}
+
+.splash .content {
+    padding: 100px !important;
+}
+
+.splash .content .title {
+    width: 60%;
+}
+
+.splash .content h1 {
+    font-family: 'Bebas Neue';
+    font-size: 100px;
+    color: #FFFFFF;
+}
+
+.splash .content .signup {
+    width: 40%;
+}
+
+.splash .content .signup .cards {
+    margin: 0px auto;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 20px;
+    font-size: 12px;
+    width: 350px;
+}
+
+.splash .content .signup .cards .card-header {
+    background-color: transparent;
+    border-width: 0px;
+}
+
+.splash .content .signup .cards .card-header button {
+    padding: 20px;
+    font-size: 14px;
+    border: 1px solid #F2F2F2;
+}
+.splash .content .signup .cards .card-header button span {
+    float: left;
+}
+.splash .content .signup .cards .card-header button.btn-facebook {
+    background-color: #2A508E;
+    color: #FFFFFF;
+}
+
+.splash .content .signup .cards .card-body label {
+    padding: 8px 0px;
+}
+.splash .content .signup .cards .card-body label.showpass {
+    float: right;
+    color: #9C9D97;
+}
+.splash .content .signup .cards .card-body input {
+    font-size: 12px;
+}
+.splash .content .signup .cards .card-body small,
+.splash .content .signup .cards .card-body small a {
+    color: #A5A5A5;
+}
+
+.splash .content .signup .cards .card-footer {
+    text-align: right;
+    background-color: transparent;
+    border-color: #FFFFFF;
+}
+
+.splash .content .signup .cards .card-footer button {
+    background-color: #03B2FC;
+    border-color: #03B2FC;
+    padding: 10px 20px;
+}

@@ -1,0 +1,45 @@
+$title-color: #FFFFFF;
+
+.splash {
+    width: 100%;
+    background-image: url('/assets/images/home/stats.png');
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    z-index: -1;
+    padding: 250px 100px !important;
+}
+
+.splash h1 {
+    font-family: 'Bebas Neue';
+    font-size: 100px;
+    color: $title-color;
+}
+
+.content {
+    padding: 100px 0px 0px 0px;
+}
+
+.content .about {
+    width: 40%;
+}
+.content .about h2 {
+    font-family: 'Myriad Pro Semibold';
+    font-size: 32px;
+}
+.content .about p {
+    font-family: 'Myriad Pro Light, Brandon Grotesque-Light';
+    font-size: 18px;
+    margin-top: 60px;
+}
+
+.content .portfolio {
+    width: 40%;
+    top: -250px;
+    position: relative;
+}
+
+.content .portfolio img {
+    width: 100%;
+}

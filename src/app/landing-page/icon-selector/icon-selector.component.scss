@@ -1,0 +1,51 @@
+.icons {
+    padding: 100px 0px;
+}
+
+.icons div {
+    text-align: center;
+    font-family: 'Myriad Pro Bold';
+    font-size: 16px;
+    border-bottom: 3px solid #FFFFFF;
+    width: 15%;
+}
+
+.icons div:hover,
+.icons div.active {
+    border-bottom: 3px solid #0D97BA;
+}
+
+.icons div img {
+    height: 43px;
+    padding-bottom: 15px;
+}
+
+.content {
+    margin-bottom: 100px;
+}
+
+.content .about {
+    width: 40%;
+    padding: 100px 0px 100px 100px !important;
+}
+.content .about h2 {
+    font-family: 'Myriad Pro Bold';
+    font-size: 32px;
+}
+.content .about p.explain {
+    font-family: 'Myriad Pro Light, BrandonGrotesque Light';
+    font-size: 18px;
+    margin-top: 60px;
+}
+.content .about p.arrows {
+    font-family: 'Myriad Pro Light';
+    font-size: 28px;
+    margin-top: 50px;
+}
+
+.content .portfolio {
+    width: 60%;
+}
+.content .portfolio img {
+    width: 100%;
+}
