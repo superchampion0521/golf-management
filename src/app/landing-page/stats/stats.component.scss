@@ -18,11 +18,14 @@ $title-color: #FFFFFF;
 }
 
 .content {
-    padding: 100px 0px 0px 0px;
+    padding-bottom: 100px;
+    margin-bottom: -250px;
 }
 
 .content .about {
     width: 40%;
+    padding: 100px !important;
+    height: 100%;
 }
 .content .about h2 {
     font-family: 'Myriad Pro Semibold';
@@ -35,8 +38,9 @@ $title-color: #FFFFFF;
 }
 
 .content .portfolio {
-    width: 40%;
+    width: 60%;
     top: -250px;
+    margin-right: 100px;
     position: relative;
 }
 

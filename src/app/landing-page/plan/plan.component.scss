@@ -125,6 +125,13 @@ button.outer {
 .content .card.standard, 
 .content .card.premium {
     top: -85px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.02);
+        -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
+        box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
+    }
 }
 
 .content .card.plans {
