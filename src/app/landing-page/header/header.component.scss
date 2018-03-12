@@ -147,18 +147,22 @@
 @media (max-width: 576px) {
     .splash {
         & .content {
-            padding: 100px 30px !important;
+            padding: 100px 0px !important;
 
             & .title {
                 width: 100%;
 
                 & h1 {
+                    padding: 0px 30px !important;
                     font-size: 60px;
                 }
             }
 
             & .signup {
                 width: 100%;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     }
