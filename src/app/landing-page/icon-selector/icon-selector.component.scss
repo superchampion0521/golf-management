@@ -1,51 +1,226 @@
 .icons {
-    padding: 100px 0px;
-}
+    padding: 100px 0px !important;
 
-.icons div {
-    text-align: center;
-    font-family: 'Myriad Pro Bold';
-    font-size: 16px;
-    border-bottom: 3px solid #FFFFFF;
-    width: 15%;
-}
+    & div {
+        text-align: center;
+        width: 170px;
 
-.icons div:hover,
-.icons div.active {
-    border-bottom: 3px solid #0D97BA;
-}
+        & span {
+            font-size: 16px;
+            font-family: 'Myriad Pro Regular';
+            border-bottom: 3px solid #FFFFFF;
+            padding-bottom: 5px;
+            margin: 10px;
+        }
 
-.icons div img {
-    height: 43px;
-    padding-bottom: 15px;
+        &:hover, &.active {
+            & span {
+                border-bottom: 3px solid #0D97BA;
+                font-family: 'Myriad Pro Bold';
+            }
+        }
+
+        & img {
+            height: 43px;
+            padding-bottom: 15px;
+        }
+    }
 }
 
 .content {
     margin-bottom: 100px;
+
+    & .about {
+        width: 40%;
+        padding: 100px 0px 100px 100px !important;
+
+        & h2 {
+            font-family: 'Myriad Pro Bold';
+            font-size: 32px;
+        }
+
+        & p {
+            &.explain {
+                font-family: 'Myriad Pro Light';
+                font-size: 18px;
+                margin-top: 60px;
+            }
+
+            &.arrows {
+                font-family: 'Myriad Pro Light';
+                font-size: 28px;
+                margin-top: 50px;
+            }
+        }
+    }
+
+    & .portfolio {
+        width: 60%;
+
+        & img {
+            width: 100%;
+        }
+    }
 }
 
-.content .about {
-    width: 40%;
-    padding: 100px 0px 100px 100px !important;
-}
-.content .about h2 {
-    font-family: 'Myriad Pro Bold';
-    font-size: 32px;
-}
-.content .about p.explain {
-    font-family: 'Myriad Pro Light, BrandonGrotesque Light';
-    font-size: 18px;
-    margin-top: 60px;
-}
-.content .about p.arrows {
-    font-family: 'Myriad Pro Light';
-    font-size: 28px;
-    margin-top: 50px;
+@media (max-width: 1200px) {
+    .icons {
+        padding: 100px 0px !important;
+    }
+    .content {
+        & .about {
+            width: 40%;
+            padding: 100px 0px 100px 50px !important;
+
+            & h2 {
+                font-size: 24px;
+            }
+
+            & p {
+                &.explain {
+                    font-size: 16px;
+                    margin-top: 30px;
+                }
+
+                &.arrows {
+                    margin-top: 50px;
+                    font-size: 24px;
+                }
+            }
+        }
+
+        & .portfolio {
+            width: 60%;
+
+            & img {
+                width: 100%;
+                position: relative;
+                top: 0%;
+                transform: translateY(0);
+            }
+        }
+    }
 }
 
-.content .portfolio {
-    width: 60%;
+@media (max-width: 992px) {
+    .icons {
+        padding: 50px 0px;
+    }
+
+    .content {
+        margin-bottom: 50px;
+
+        & .about {
+            width: 50%;
+            padding: 50px 0px 50px 30px !important;
+
+            & h2 {
+                font-size: 24px;
+            }
+
+            & p {
+                &.explain {
+                    font-size: 16px;
+                    margin-top: 30px;
+                }
+
+                &.arrows {
+                    margin-top: 30px;
+                    font-size: 24px;
+                }
+            }
+        }
+
+        & .portfolio {
+            width: 50%;
+
+            & img {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
 }
-.content .portfolio img {
-    width: 100%;
+
+@media (max-width: 768px) {
+    .icons {
+        padding: 25px 0px;
+    }
+
+    .content {
+        margin-bottom: 30px;
+
+        & .about {
+            width: 60%;
+            padding: 20px 25px !important;
+
+            & h2 {
+                font-size: 20px;
+            }
+
+            & p {
+                &.explain {
+                    font-size: 14px;
+                    margin-top: 20px;
+                }
+
+                &.arrows {
+                    margin-top: 25px;
+                    font-size: 24px;
+                }
+            }
+        }
+
+        & .portfolio {
+            width: 40%;
+
+            & img {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .icons {
+        padding: 25px 0px;
+    }
+
+    .content {
+        margin-bottom: 25px;
+
+        & .about {
+            width: 100%;
+            padding: 20px 25px !important;
+
+            & h2 {
+                font-size: 24px;
+            }
+
+            & p {
+                &.explain {
+                    font-size: 14px;
+                    margin-top: 20px;
+                }
+
+                &.arrows {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        & .portfolio {
+            width: 100%;
+            padding: 25px 0px 25px 25px !important;
+
+            & img {
+                position: relative;
+                top: 0%;
+                transform: translateY(0);
+            }
+        }
+    }
 }
