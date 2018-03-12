@@ -29,7 +29,7 @@ $title-color: #FFFFFF;
         }
 
         & p {
-            font-family: 'Myriad Pro Light, Brandon Grotesque-Light';
+            font-family: 'Myriad Pro Light';
             font-size: 18px;
             margin-top: 60px;
         }
@@ -37,7 +37,7 @@ $title-color: #FFFFFF;
 
     & .portfolio {
         width: 60%;
-        top: -250px;
+        top: -160px;
         padding-right: 100px !important;
         position: relative;
 
@@ -48,10 +48,73 @@ $title-color: #FFFFFF;
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
     .content {
         & .about {
-            padding: 25px 25px !important;
+            padding: 50px !important;
+            width: 40%;
+
+            h2 {
+                font-size: 30px;
+            }
+
+            & p {
+                font-size: 20px;
+                margin-top: 30px;
+            }
+        }
+
+        & .portfolio {
+            width: 60%;
+            top: -120px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .content {
+        & .about {
+            padding: 50px !important;
+            width: 40%;
+
+            & h2 {
+                font-size: 26px;
+            }
+
+            & p {
+                font-size: 18px;
+                margin-top: 20px;
+            }
+        }
+
+        & .portfolio {
+            width: 60%;
+            top: -100px;
+            padding-right: 50px !important;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .content {
+        & .about {
+            padding: 50px 25px !important;
+            width: 45%;
+
+            & h2 {
+                font-size: 25px;
+            }
+
+            & p {
+                font-size: 15px;
+                margin-top: 20px;
+            }
+        }
+
+        & .portfolio {
+            width: 55%;
+            padding-right: 25px !important;
+            top: -80px;
         }
     }
 }
