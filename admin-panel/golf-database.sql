@@ -1,30 +1,27 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 4541
-#
-# http://www.sequelpro.com/
-# https://github.com/sequelpro/sequelpro
-#
-# Host: 127.0.0.1 (MySQL 5.7.21)
-# Database: golf
-# Generation Time: 2018-03-14 07:06:32 +0000
-# ************************************************************
-
+-- MySQL dump 10.13  Distrib 5.7.21, for osx10.13 (x86_64)
+--
+-- Host: localhost    Database: golf
+-- ------------------------------------------------------
+-- Server version	5.7.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
-# Dump of table backups
-# ------------------------------------------------------------
+--
+-- Table structure for table `backups`
+--
 
 DROP TABLE IF EXISTS `backups`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `backups` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -37,14 +34,24 @@ CREATE TABLE `backups` (
   UNIQUE KEY `backups_name_unique` (`name`),
   UNIQUE KEY `backups_file_name_unique` (`file_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `backups`
+--
 
+LOCK TABLES `backups` WRITE;
+/*!40000 ALTER TABLE `backups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `backups` ENABLE KEYS */;
+UNLOCK TABLES;
 
-# Dump of table departments
-# ------------------------------------------------------------
+--
+-- Table structure for table `departments`
+--
 
 DROP TABLE IF EXISTS `departments`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `departments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -55,24 +62,26 @@ CREATE TABLE `departments` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `departments_name_unique` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `departments`
+--
 
 LOCK TABLES `departments` WRITE;
 /*!40000 ALTER TABLE `departments` DISABLE KEYS */;
-
-INSERT INTO `departments` (`id`, `name`, `tags`, `color`, `deleted_at`, `created_at`, `updated_at`)
-VALUES
-	(1,'Administration','[]','#000',NULL,'2018-03-14 00:05:17','2018-03-14 00:05:17');
-
+INSERT INTO `departments` VALUES (1,'Administration','[]','#000',NULL,'2018-03-13 20:05:17','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table employees
-# ------------------------------------------------------------
+--
+-- Table structure for table `employees`
+--
 
 DROP TABLE IF EXISTS `employees`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employees` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -96,24 +105,26 @@ CREATE TABLE `employees` (
   UNIQUE KEY `employees_email_unique` (`email`),
   KEY `employees_dept_foreign` (`dept`),
   CONSTRAINT `employees_dept_foreign` FOREIGN KEY (`dept`) REFERENCES `departments` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employees`
+--
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-
-INSERT INTO `employees` (`id`, `name`, `designation`, `gender`, `mobile`, `mobile2`, `email`, `dept`, `city`, `address`, `about`, `date_birth`, `date_hire`, `date_left`, `salary_cur`, `deleted_at`, `created_at`, `updated_at`)
-VALUES
-	(1,'admin','Super Admin','Male','8888888888','','admin@golf.com',1,'Pune','Karve nagar, Pune 411030','About user / biography','2018-03-14','2018-03-14','2018-03-14',0.000,NULL,'2018-03-14 00:05:28','2018-03-14 00:05:28');
-
+INSERT INTO `employees` VALUES (1,'admin','Super Admin','Male','8888888888','','admin@golf.com',1,'Pune','Karve nagar, Pune 411030','About user / biography','2018-03-14','2018-03-14','2018-03-14',0.000,NULL,'2018-03-13 20:05:28','2018-03-13 20:05:28');
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table la_configs
-# ------------------------------------------------------------
+--
+-- Table structure for table `la_configs`
+--
 
 DROP TABLE IF EXISTS `la_configs`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `la_configs` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -122,36 +133,26 @@ CREATE TABLE `la_configs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `la_configs`
+--
 
 LOCK TABLES `la_configs` WRITE;
 /*!40000 ALTER TABLE `la_configs` DISABLE KEYS */;
-
-INSERT INTO `la_configs` (`id`, `key`, `section`, `value`, `created_at`, `updated_at`)
-VALUES
-	(1,'sitename','','LaraAdmin 1.0','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(2,'sitename_part1','','Lara','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(3,'sitename_part2','','Admin 1.0','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(4,'sitename_short','','LA','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(5,'site_description','','LaraAdmin is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(6,'sidebar_search','','1','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(7,'show_messages','','1','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(8,'show_notifications','','1','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(9,'show_tasks','','1','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(10,'show_rightsidebar','','1','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(11,'skin','','skin-white','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(12,'layout','','fixed','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(13,'default_email','','test@example.com','2018-03-14 00:05:17','2018-03-14 00:05:17');
-
+INSERT INTO `la_configs` VALUES (1,'sitename','','LaraAdmin 1.0','2018-03-13 20:05:17','2018-03-13 20:05:17'),(2,'sitename_part1','','Lara','2018-03-13 20:05:17','2018-03-13 20:05:17'),(3,'sitename_part2','','Admin 1.0','2018-03-13 20:05:17','2018-03-13 20:05:17'),(4,'sitename_short','','LA','2018-03-13 20:05:17','2018-03-13 20:05:17'),(5,'site_description','','LaraAdmin is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.','2018-03-13 20:05:17','2018-03-13 20:05:17'),(6,'sidebar_search','','1','2018-03-13 20:05:17','2018-03-13 20:05:17'),(7,'show_messages','','1','2018-03-13 20:05:17','2018-03-13 20:05:17'),(8,'show_notifications','','1','2018-03-13 20:05:17','2018-03-13 20:05:17'),(9,'show_tasks','','1','2018-03-13 20:05:17','2018-03-13 20:05:17'),(10,'show_rightsidebar','','1','2018-03-13 20:05:17','2018-03-13 20:05:17'),(11,'skin','','skin-white','2018-03-13 20:05:17','2018-03-13 20:05:17'),(12,'layout','','fixed','2018-03-13 20:05:17','2018-03-13 20:05:17'),(13,'default_email','','test@example.com','2018-03-13 20:05:17','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `la_configs` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table la_menus
-# ------------------------------------------------------------
+--
+-- Table structure for table `la_menus`
+--
 
 DROP TABLE IF EXISTS `la_menus`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `la_menus` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -163,116 +164,75 @@ CREATE TABLE `la_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `la_menus`
+--
 
 LOCK TABLES `la_menus` WRITE;
 /*!40000 ALTER TABLE `la_menus` DISABLE KEYS */;
-
-INSERT INTO `la_menus` (`id`, `name`, `url`, `icon`, `type`, `parent`, `hierarchy`, `created_at`, `updated_at`)
-VALUES
-	(1,'Team','#','fa-group','custom',0,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(2,'Users','users','fa-group','module',1,0,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(3,'Uploads','uploads','fa-files-o','module',0,0,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(4,'Departments','departments','fa-tags','module',1,0,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(5,'Employees','employees','fa-group','module',1,0,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(6,'Roles','roles','fa-user-plus','module',1,0,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(7,'Organizations','organizations','fa-university','module',0,0,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(8,'Permissions','permissions','fa-magic','module',1,0,'2018-03-14 00:05:17','2018-03-14 00:05:17');
-
+INSERT INTO `la_menus` VALUES (1,'Team','#','fa-group','custom',0,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(2,'Users','users','fa-group','module',1,0,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(3,'Uploads','uploads','fa-files-o','module',0,0,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(4,'Departments','departments','fa-tags','module',1,0,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(5,'Employees','employees','fa-group','module',1,0,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(6,'Roles','roles','fa-user-plus','module',1,0,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(7,'Organizations','organizations','fa-university','module',0,0,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(8,'Permissions','permissions','fa-magic','module',1,0,'2018-03-13 20:05:17','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `la_menus` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table migrations
-# ------------------------------------------------------------
+--
+-- Table structure for table `migrations`
+--
 
 DROP TABLE IF EXISTS `migrations`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-
-INSERT INTO `migrations` (`migration`, `batch`)
-VALUES
-	('2014_05_26_050000_create_modules_table',1),
-	('2014_05_26_055000_create_module_field_types_table',1),
-	('2014_05_26_060000_create_module_fields_table',1),
-	('2014_10_12_000000_create_users_table',1),
-	('2014_10_12_100000_create_password_resets_table',1),
-	('2014_12_01_000000_create_uploads_table',1),
-	('2016_05_26_064006_create_departments_table',1),
-	('2016_05_26_064007_create_employees_table',1),
-	('2016_05_26_064446_create_roles_table',1),
-	('2016_07_05_115343_create_role_user_table',1),
-	('2016_07_06_140637_create_organizations_table',1),
-	('2016_07_07_134058_create_backups_table',1),
-	('2016_07_07_134058_create_menus_table',1),
-	('2016_09_10_163337_create_permissions_table',1),
-	('2016_09_10_163520_create_permission_role_table',1),
-	('2016_09_22_105958_role_module_fields_table',1),
-	('2016_09_22_110008_role_module_table',1),
-	('2016_10_06_115413_create_la_configs_table',1);
-
+INSERT INTO `migrations` VALUES ('2014_05_26_050000_create_modules_table',1),('2014_05_26_055000_create_module_field_types_table',1),('2014_05_26_060000_create_module_fields_table',1),('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2014_12_01_000000_create_uploads_table',1),('2016_05_26_064006_create_departments_table',1),('2016_05_26_064007_create_employees_table',1),('2016_05_26_064446_create_roles_table',1),('2016_07_05_115343_create_role_user_table',1),('2016_07_06_140637_create_organizations_table',1),('2016_07_07_134058_create_backups_table',1),('2016_07_07_134058_create_menus_table',1),('2016_09_10_163337_create_permissions_table',1),('2016_09_10_163520_create_permission_role_table',1),('2016_09_22_105958_role_module_fields_table',1),('2016_09_22_110008_role_module_table',1),('2016_10_06_115413_create_la_configs_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table module_field_types
-# ------------------------------------------------------------
+--
+-- Table structure for table `module_field_types`
+--
 
 DROP TABLE IF EXISTS `module_field_types`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `module_field_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `module_field_types`
+--
 
 LOCK TABLES `module_field_types` WRITE;
 /*!40000 ALTER TABLE `module_field_types` DISABLE KEYS */;
-
-INSERT INTO `module_field_types` (`id`, `name`, `created_at`, `updated_at`)
-VALUES
-	(1,'Address','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(2,'Checkbox','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(3,'Currency','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(4,'Date','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(5,'Datetime','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(6,'Decimal','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(7,'Dropdown','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(8,'Email','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(9,'File','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(10,'Float','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(11,'HTML','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(12,'Image','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(13,'Integer','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(14,'Mobile','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(15,'Multiselect','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(16,'Name','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(17,'Password','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(18,'Radio','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(19,'String','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(20,'Taginput','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(21,'Textarea','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(22,'TextField','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(23,'URL','2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(24,'Files','2018-03-14 00:05:15','2018-03-14 00:05:15');
-
+INSERT INTO `module_field_types` VALUES (1,'Address','2018-03-13 20:05:15','2018-03-13 20:05:15'),(2,'Checkbox','2018-03-13 20:05:15','2018-03-13 20:05:15'),(3,'Currency','2018-03-13 20:05:15','2018-03-13 20:05:15'),(4,'Date','2018-03-13 20:05:15','2018-03-13 20:05:15'),(5,'Datetime','2018-03-13 20:05:15','2018-03-13 20:05:15'),(6,'Decimal','2018-03-13 20:05:15','2018-03-13 20:05:15'),(7,'Dropdown','2018-03-13 20:05:15','2018-03-13 20:05:15'),(8,'Email','2018-03-13 20:05:15','2018-03-13 20:05:15'),(9,'File','2018-03-13 20:05:15','2018-03-13 20:05:15'),(10,'Float','2018-03-13 20:05:15','2018-03-13 20:05:15'),(11,'HTML','2018-03-13 20:05:15','2018-03-13 20:05:15'),(12,'Image','2018-03-13 20:05:15','2018-03-13 20:05:15'),(13,'Integer','2018-03-13 20:05:15','2018-03-13 20:05:15'),(14,'Mobile','2018-03-13 20:05:15','2018-03-13 20:05:15'),(15,'Multiselect','2018-03-13 20:05:15','2018-03-13 20:05:15'),(16,'Name','2018-03-13 20:05:15','2018-03-13 20:05:15'),(17,'Password','2018-03-13 20:05:15','2018-03-13 20:05:15'),(18,'Radio','2018-03-13 20:05:15','2018-03-13 20:05:15'),(19,'String','2018-03-13 20:05:15','2018-03-13 20:05:15'),(20,'Taginput','2018-03-13 20:05:15','2018-03-13 20:05:15'),(21,'Textarea','2018-03-13 20:05:15','2018-03-13 20:05:15'),(22,'TextField','2018-03-13 20:05:15','2018-03-13 20:05:15'),(23,'URL','2018-03-13 20:05:15','2018-03-13 20:05:15'),(24,'Files','2018-03-13 20:05:15','2018-03-13 20:05:15');
 /*!40000 ALTER TABLE `module_field_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table module_fields
-# ------------------------------------------------------------
+--
+-- Table structure for table `module_fields`
+--
 
 DROP TABLE IF EXISTS `module_fields`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `module_fields` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `colname` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -293,74 +253,26 @@ CREATE TABLE `module_fields` (
   KEY `module_fields_field_type_foreign` (`field_type`),
   CONSTRAINT `module_fields_field_type_foreign` FOREIGN KEY (`field_type`) REFERENCES `module_field_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `module_fields_module_foreign` FOREIGN KEY (`module`) REFERENCES `modules` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `module_fields`
+--
 
 LOCK TABLES `module_fields` WRITE;
 /*!40000 ALTER TABLE `module_fields` DISABLE KEYS */;
-
-INSERT INTO `module_fields` (`id`, `colname`, `label`, `module`, `field_type`, `unique`, `defaultvalue`, `minlength`, `maxlength`, `required`, `popup_vals`, `sort`, `created_at`, `updated_at`)
-VALUES
-	(1,'name','Name',1,16,0,'',5,250,1,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(2,'context_id','Context',1,13,0,'0',0,0,0,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(3,'email','Email',1,8,1,'',0,250,0,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(4,'password','Password',1,17,0,'',6,250,1,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(5,'type','User Type',1,7,0,'Employee',0,0,0,'[\"Employee\",\"Client\"]',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(6,'name','Name',2,16,0,'',5,250,1,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(7,'path','Path',2,19,0,'',0,250,0,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(8,'extension','Extension',2,19,0,'',0,20,0,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(9,'caption','Caption',2,19,0,'',0,250,0,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(10,'user_id','Owner',2,7,0,'1',0,0,0,'@users',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(11,'hash','Hash',2,19,0,'',0,250,0,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(12,'public','Is Public',2,2,0,'0',0,0,0,'',0,'2018-03-14 00:05:15','2018-03-14 00:05:15'),
-	(13,'name','Name',3,16,1,'',1,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(14,'tags','Tags',3,20,0,'[]',0,0,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(15,'color','Color',3,19,0,'',0,50,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(16,'name','Name',4,16,0,'',5,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(17,'designation','Designation',4,19,0,'',0,50,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(18,'gender','Gender',4,18,0,'Male',0,0,1,'[\"Male\",\"Female\"]',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(19,'mobile','Mobile',4,14,0,'',10,20,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(20,'mobile2','Alternative Mobile',4,14,0,'',10,20,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(21,'email','Email',4,8,1,'',5,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(22,'dept','Department',4,7,0,'0',0,0,1,'@departments',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(23,'city','City',4,19,0,'',0,50,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(24,'address','Address',4,1,0,'',0,1000,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(25,'about','About',4,19,0,'',0,0,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(26,'date_birth','Date of Birth',4,4,0,'1990-01-01',0,0,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(27,'date_hire','Hiring Date',4,4,0,'date(\'Y-m-d\')',0,0,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(28,'date_left','Resignation Date',4,4,0,'1990-01-01',0,0,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(29,'salary_cur','Current Salary',4,6,0,'0.0',0,2,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(30,'name','Name',5,16,1,'',1,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(31,'display_name','Display Name',5,19,0,'',0,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(32,'description','Description',5,21,0,'',0,1000,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(33,'parent','Parent Role',5,7,0,'1',0,0,0,'@roles',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(34,'dept','Department',5,7,0,'1',0,0,0,'@departments',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(35,'name','Name',6,16,1,'',5,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(36,'email','Email',6,8,1,'',0,250,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(37,'phone','Phone',6,14,0,'',0,20,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(38,'website','Website',6,23,0,'http://',0,250,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(39,'assigned_to','Assigned to',6,7,0,'0',0,0,0,'@employees',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(40,'connect_since','Connected Since',6,4,0,'date(\'Y-m-d\')',0,0,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(41,'address','Address',6,1,0,'',0,1000,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(42,'city','City',6,19,0,'',0,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(43,'description','Description',6,21,0,'',0,1000,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(44,'profile_image','Profile Image',6,12,0,'',0,250,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(45,'profile','Company Profile',6,9,0,'',0,250,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(46,'name','Name',7,16,1,'',0,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(47,'file_name','File Name',7,19,1,'',0,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(48,'backup_size','File Size',7,19,0,'0',0,10,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(49,'name','Name',8,16,1,'',1,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(50,'display_name','Display Name',8,19,0,'',0,250,1,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16'),
-	(51,'description','Description',8,21,0,'',0,1000,0,'',0,'2018-03-14 00:05:16','2018-03-14 00:05:16');
-
+INSERT INTO `module_fields` VALUES (1,'name','Name',1,16,0,'',5,250,1,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(2,'context_id','Context',1,13,0,'0',0,0,0,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(3,'email','Email',1,8,1,'',0,250,0,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(4,'password','Password',1,17,0,'',6,250,1,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(5,'type','User Type',1,7,0,'Employee',0,0,0,'[\"Employee\",\"Client\"]',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(6,'name','Name',2,16,0,'',5,250,1,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(7,'path','Path',2,19,0,'',0,250,0,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(8,'extension','Extension',2,19,0,'',0,20,0,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(9,'caption','Caption',2,19,0,'',0,250,0,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(10,'user_id','Owner',2,7,0,'1',0,0,0,'@users',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(11,'hash','Hash',2,19,0,'',0,250,0,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(12,'public','Is Public',2,2,0,'0',0,0,0,'',0,'2018-03-13 20:05:15','2018-03-13 20:05:15'),(13,'name','Name',3,16,1,'',1,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(14,'tags','Tags',3,20,0,'[]',0,0,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(15,'color','Color',3,19,0,'',0,50,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(16,'name','Name',4,16,0,'',5,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(17,'designation','Designation',4,19,0,'',0,50,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(18,'gender','Gender',4,18,0,'Male',0,0,1,'[\"Male\",\"Female\"]',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(19,'mobile','Mobile',4,14,0,'',10,20,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(20,'mobile2','Alternative Mobile',4,14,0,'',10,20,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(21,'email','Email',4,8,1,'',5,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(22,'dept','Department',4,7,0,'0',0,0,1,'@departments',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(23,'city','City',4,19,0,'',0,50,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(24,'address','Address',4,1,0,'',0,1000,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(25,'about','About',4,19,0,'',0,0,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(26,'date_birth','Date of Birth',4,4,0,'1990-01-01',0,0,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(27,'date_hire','Hiring Date',4,4,0,'date(\'Y-m-d\')',0,0,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(28,'date_left','Resignation Date',4,4,0,'1990-01-01',0,0,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(29,'salary_cur','Current Salary',4,6,0,'0.0',0,2,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(30,'name','Name',5,16,1,'',1,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(31,'display_name','Display Name',5,19,0,'',0,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(32,'description','Description',5,21,0,'',0,1000,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(33,'parent','Parent Role',5,7,0,'1',0,0,0,'@roles',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(34,'dept','Department',5,7,0,'1',0,0,0,'@departments',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(35,'name','Name',6,16,1,'',5,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(36,'email','Email',6,8,1,'',0,250,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(37,'phone','Phone',6,14,0,'',0,20,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(38,'website','Website',6,23,0,'http://',0,250,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(39,'assigned_to','Assigned to',6,7,0,'0',0,0,0,'@employees',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(40,'connect_since','Connected Since',6,4,0,'date(\'Y-m-d\')',0,0,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(41,'address','Address',6,1,0,'',0,1000,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(42,'city','City',6,19,0,'',0,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(43,'description','Description',6,21,0,'',0,1000,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(44,'profile_image','Profile Image',6,12,0,'',0,250,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(45,'profile','Company Profile',6,9,0,'',0,250,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(46,'name','Name',7,16,1,'',0,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(47,'file_name','File Name',7,19,1,'',0,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(48,'backup_size','File Size',7,19,0,'0',0,10,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(49,'name','Name',8,16,1,'',1,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(50,'display_name','Display Name',8,19,0,'',0,250,1,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16'),(51,'description','Description',8,21,0,'',0,1000,0,'',0,'2018-03-13 20:05:16','2018-03-13 20:05:16');
 /*!40000 ALTER TABLE `module_fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table modules
-# ------------------------------------------------------------
+--
+-- Table structure for table `modules`
+--
 
 DROP TABLE IF EXISTS `modules`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `modules` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -374,31 +286,26 @@ CREATE TABLE `modules` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `modules`
+--
 
 LOCK TABLES `modules` WRITE;
 /*!40000 ALTER TABLE `modules` DISABLE KEYS */;
-
-INSERT INTO `modules` (`id`, `name`, `label`, `name_db`, `view_col`, `model`, `controller`, `fa_icon`, `is_gen`, `created_at`, `updated_at`)
-VALUES
-	(1,'Users','Users','users','name','User','UsersController','fa-group',1,'2018-03-14 00:05:15','2018-03-14 00:05:17'),
-	(2,'Uploads','Uploads','uploads','name','Upload','UploadsController','fa-files-o',1,'2018-03-14 00:05:15','2018-03-14 00:05:17'),
-	(3,'Departments','Departments','departments','name','Department','DepartmentsController','fa-tags',1,'2018-03-14 00:05:16','2018-03-14 00:05:17'),
-	(4,'Employees','Employees','employees','name','Employee','EmployeesController','fa-group',1,'2018-03-14 00:05:16','2018-03-14 00:05:17'),
-	(5,'Roles','Roles','roles','name','Role','RolesController','fa-user-plus',1,'2018-03-14 00:05:16','2018-03-14 00:05:17'),
-	(6,'Organizations','Organizations','organizations','name','Organization','OrganizationsController','fa-university',1,'2018-03-14 00:05:16','2018-03-14 00:05:17'),
-	(7,'Backups','Backups','backups','name','Backup','BackupsController','fa-hdd-o',1,'2018-03-14 00:05:16','2018-03-14 00:05:17'),
-	(8,'Permissions','Permissions','permissions','name','Permission','PermissionsController','fa-magic',1,'2018-03-14 00:05:16','2018-03-14 00:05:17');
-
+INSERT INTO `modules` VALUES (1,'Users','Users','users','name','User','UsersController','fa-group',1,'2018-03-13 20:05:15','2018-03-13 20:05:17'),(2,'Uploads','Uploads','uploads','name','Upload','UploadsController','fa-files-o',1,'2018-03-13 20:05:15','2018-03-13 20:05:17'),(3,'Departments','Departments','departments','name','Department','DepartmentsController','fa-tags',1,'2018-03-13 20:05:16','2018-03-13 20:05:17'),(4,'Employees','Employees','employees','name','Employee','EmployeesController','fa-group',1,'2018-03-13 20:05:16','2018-03-13 20:05:17'),(5,'Roles','Roles','roles','name','Role','RolesController','fa-user-plus',1,'2018-03-13 20:05:16','2018-03-13 20:05:17'),(6,'Organizations','Organizations','organizations','name','Organization','OrganizationsController','fa-university',1,'2018-03-13 20:05:16','2018-03-13 20:05:17'),(7,'Backups','Backups','backups','name','Backup','BackupsController','fa-hdd-o',1,'2018-03-13 20:05:16','2018-03-13 20:05:17'),(8,'Permissions','Permissions','permissions','name','Permission','PermissionsController','fa-magic',1,'2018-03-13 20:05:16','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `modules` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table organizations
-# ------------------------------------------------------------
+--
+-- Table structure for table `organizations`
+--
 
 DROP TABLE IF EXISTS `organizations`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `organizations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -421,14 +328,24 @@ CREATE TABLE `organizations` (
   KEY `organizations_assigned_to_foreign` (`assigned_to`),
   CONSTRAINT `organizations_assigned_to_foreign` FOREIGN KEY (`assigned_to`) REFERENCES `employees` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `organizations`
+--
 
+LOCK TABLES `organizations` WRITE;
+/*!40000 ALTER TABLE `organizations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `organizations` ENABLE KEYS */;
+UNLOCK TABLES;
 
-# Dump of table password_resets
-# ------------------------------------------------------------
+--
+-- Table structure for table `password_resets`
+--
 
 DROP TABLE IF EXISTS `password_resets`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -436,14 +353,24 @@ CREATE TABLE `password_resets` (
   KEY `password_resets_email_index` (`email`),
   KEY `password_resets_token_index` (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `password_resets`
+--
 
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
 
-# Dump of table permission_role
-# ------------------------------------------------------------
+--
+-- Table structure for table `permission_role`
+--
 
 DROP TABLE IF EXISTS `permission_role`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `permission_role` (
   `permission_id` int(10) unsigned NOT NULL,
   `role_id` int(10) unsigned NOT NULL,
@@ -452,23 +379,25 @@ CREATE TABLE `permission_role` (
   CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `permission_role`
+--
 
 LOCK TABLES `permission_role` WRITE;
 /*!40000 ALTER TABLE `permission_role` DISABLE KEYS */;
-
-INSERT INTO `permission_role` (`permission_id`, `role_id`)
-VALUES
-	(1,1);
-
+INSERT INTO `permission_role` VALUES (1,1);
 /*!40000 ALTER TABLE `permission_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table permissions
-# ------------------------------------------------------------
+--
+-- Table structure for table `permissions`
+--
 
 DROP TABLE IF EXISTS `permissions`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `permissions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -479,24 +408,26 @@ CREATE TABLE `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_unique` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `permissions`
+--
 
 LOCK TABLES `permissions` WRITE;
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
-
-INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `deleted_at`, `created_at`, `updated_at`)
-VALUES
-	(1,'ADMIN_PANEL','Admin Panel','Admin Panel Permission',NULL,'2018-03-14 00:05:17','2018-03-14 00:05:17');
-
+INSERT INTO `permissions` VALUES (1,'ADMIN_PANEL','Admin Panel','Admin Panel Permission',NULL,'2018-03-13 20:05:17','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table role_module
-# ------------------------------------------------------------
+--
+-- Table structure for table `role_module`
+--
 
 DROP TABLE IF EXISTS `role_module`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role_module` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `role_id` int(10) unsigned NOT NULL,
@@ -512,31 +443,26 @@ CREATE TABLE `role_module` (
   KEY `role_module_module_id_foreign` (`module_id`),
   CONSTRAINT `role_module_module_id_foreign` FOREIGN KEY (`module_id`) REFERENCES `modules` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_module_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role_module`
+--
 
 LOCK TABLES `role_module` WRITE;
 /*!40000 ALTER TABLE `role_module` DISABLE KEYS */;
-
-INSERT INTO `role_module` (`id`, `role_id`, `module_id`, `acc_view`, `acc_create`, `acc_edit`, `acc_delete`, `created_at`, `updated_at`)
-VALUES
-	(1,1,1,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(2,1,2,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(3,1,3,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(4,1,4,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(5,1,5,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(6,1,6,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(7,1,7,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(8,1,8,1,1,1,1,'2018-03-14 00:05:17','2018-03-14 00:05:17');
-
+INSERT INTO `role_module` VALUES (1,1,1,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(2,1,2,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(3,1,3,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(4,1,4,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(5,1,5,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(6,1,6,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(7,1,7,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17'),(8,1,8,1,1,1,1,'2018-03-13 20:05:17','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `role_module` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table role_module_fields
-# ------------------------------------------------------------
+--
+-- Table structure for table `role_module_fields`
+--
 
 DROP TABLE IF EXISTS `role_module_fields`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role_module_fields` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `role_id` int(10) unsigned NOT NULL,
@@ -549,74 +475,26 @@ CREATE TABLE `role_module_fields` (
   KEY `role_module_fields_field_id_foreign` (`field_id`),
   CONSTRAINT `role_module_fields_field_id_foreign` FOREIGN KEY (`field_id`) REFERENCES `module_fields` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_module_fields_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role_module_fields`
+--
 
 LOCK TABLES `role_module_fields` WRITE;
 /*!40000 ALTER TABLE `role_module_fields` DISABLE KEYS */;
-
-INSERT INTO `role_module_fields` (`id`, `role_id`, `field_id`, `access`, `created_at`, `updated_at`)
-VALUES
-	(1,1,1,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(2,1,2,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(3,1,3,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(4,1,4,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(5,1,5,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(6,1,6,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(7,1,7,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(8,1,8,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(9,1,9,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(10,1,10,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(11,1,11,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(12,1,12,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(13,1,13,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(14,1,14,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(15,1,15,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(16,1,16,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(17,1,17,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(18,1,18,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(19,1,19,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(20,1,20,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(21,1,21,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(22,1,22,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(23,1,23,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(24,1,24,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(25,1,25,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(26,1,26,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(27,1,27,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(28,1,28,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(29,1,29,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(30,1,30,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(31,1,31,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(32,1,32,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(33,1,33,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(34,1,34,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(35,1,35,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(36,1,36,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(37,1,37,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(38,1,38,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(39,1,39,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(40,1,40,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(41,1,41,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(42,1,42,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(43,1,43,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(44,1,44,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(45,1,45,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(46,1,46,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(47,1,47,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(48,1,48,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(49,1,49,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(50,1,50,'write','2018-03-14 00:05:17','2018-03-14 00:05:17'),
-	(51,1,51,'write','2018-03-14 00:05:17','2018-03-14 00:05:17');
-
+INSERT INTO `role_module_fields` VALUES (1,1,1,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(2,1,2,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(3,1,3,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(4,1,4,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(5,1,5,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(6,1,6,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(7,1,7,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(8,1,8,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(9,1,9,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(10,1,10,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(11,1,11,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(12,1,12,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(13,1,13,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(14,1,14,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(15,1,15,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(16,1,16,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(17,1,17,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(18,1,18,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(19,1,19,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(20,1,20,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(21,1,21,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(22,1,22,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(23,1,23,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(24,1,24,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(25,1,25,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(26,1,26,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(27,1,27,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(28,1,28,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(29,1,29,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(30,1,30,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(31,1,31,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(32,1,32,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(33,1,33,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(34,1,34,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(35,1,35,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(36,1,36,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(37,1,37,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(38,1,38,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(39,1,39,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(40,1,40,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(41,1,41,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(42,1,42,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(43,1,43,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(44,1,44,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(45,1,45,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(46,1,46,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(47,1,47,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(48,1,48,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(49,1,49,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(50,1,50,'write','2018-03-13 20:05:17','2018-03-13 20:05:17'),(51,1,51,'write','2018-03-13 20:05:17','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `role_module_fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table role_user
-# ------------------------------------------------------------
+--
+-- Table structure for table `role_user`
+--
 
 DROP TABLE IF EXISTS `role_user`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role_user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `role_id` int(10) unsigned NOT NULL,
@@ -628,24 +506,26 @@ CREATE TABLE `role_user` (
   KEY `role_user_user_id_foreign` (`user_id`),
   CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role_user`
+--
 
 LOCK TABLES `role_user` WRITE;
 /*!40000 ALTER TABLE `role_user` DISABLE KEYS */;
-
-INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`)
-VALUES
-	(1,1,1,NULL,NULL);
-
+INSERT INTO `role_user` VALUES (1,1,1,NULL,NULL);
 /*!40000 ALTER TABLE `role_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table roles
-# ------------------------------------------------------------
+--
+-- Table structure for table `roles`
+--
 
 DROP TABLE IF EXISTS `roles`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -662,24 +542,26 @@ CREATE TABLE `roles` (
   KEY `roles_dept_foreign` (`dept`),
   CONSTRAINT `roles_dept_foreign` FOREIGN KEY (`dept`) REFERENCES `departments` (`id`),
   CONSTRAINT `roles_parent_foreign` FOREIGN KEY (`parent`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-
-INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `parent`, `dept`, `deleted_at`, `created_at`, `updated_at`)
-VALUES
-	(1,'SUPER_ADMIN','Super Admin','Full Access Role',1,1,NULL,'2018-03-14 00:05:17','2018-03-14 00:05:17');
-
+INSERT INTO `roles` VALUES (1,'SUPER_ADMIN','Super Admin','Full Access Role',1,1,NULL,'2018-03-13 20:05:17','2018-03-13 20:05:17');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table uploads
-# ------------------------------------------------------------
+--
+-- Table structure for table `uploads`
+--
 
 DROP TABLE IF EXISTS `uploads`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `uploads` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -696,14 +578,24 @@ CREATE TABLE `uploads` (
   KEY `uploads_user_id_foreign` (`user_id`),
   CONSTRAINT `uploads_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `uploads`
+--
 
+LOCK TABLES `uploads` WRITE;
+/*!40000 ALTER TABLE `uploads` DISABLE KEYS */;
+/*!40000 ALTER TABLE `uploads` ENABLE KEYS */;
+UNLOCK TABLES;
 
-# Dump of table users
-# ------------------------------------------------------------
+--
+-- Table structure for table `users`
+--
 
 DROP TABLE IF EXISTS `users`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -717,23 +609,26 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-
-INSERT INTO `users` (`id`, `name`, `context_id`, `email`, `password`, `type`, `remember_token`, `deleted_at`, `created_at`, `updated_at`)
-VALUES
-	(1,'admin',1,'admin@golf.com','$2y$10$R9FmP8FAy7Cu9EtuQLmH8uBfZEYYb971ZYF2KVgbK4XE/wmqrEjp.','Employee','w4FoAZfAGrnOi8rKtf6aghrnrBhVhpMfWoCAfKPgitbqe7uqwVVDxrF4NRqt',NULL,'2018-03-14 00:05:28','2018-03-14 00:06:09');
-
+INSERT INTO `users` VALUES (1,'admin',1,'admin@golf.com','$2y$10$R9FmP8FAy7Cu9EtuQLmH8uBfZEYYb971ZYF2KVgbK4XE/wmqrEjp.','Employee','w4FoAZfAGrnOi8rKtf6aghrnrBhVhpMfWoCAfKPgitbqe7uqwVVDxrF4NRqt',NULL,'2018-03-13 20:05:28','2018-03-13 20:06:09');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-03-14 11:11:26
