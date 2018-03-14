@@ -1,0 +1,19 @@
+.footer {
+    padding: 150px 100px;
+    background-color: #234558;
+    color: #FFFFFF;
+
+    & div {
+        & h5 {
+            font-family: 'Myriad Pro Semibold';
+            font-size: 18px;
+            padding-bottom: 20px;
+        }
+
+        & p {
+            font-family: 'Myriad Pro Light';
+            font-size: 14px;
+            padding-bottom: 10px;
+        }
+    }
+}

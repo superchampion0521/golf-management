@@ -10,6 +10,7 @@ import { PlanComponent } from './plan/plan.component';
 import { StatsComponent } from './stats/stats.component';
 import { ForumComponent } from './forum/forum.component';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { KnowledgeComponent } from './knowledge/knowledge.component';
         PlanComponent,
         StatsComponent,
         ForumComponent,
-        KnowledgeComponent
+        KnowledgeComponent,
+        FooterComponent
     ]
 })
 export class LandingPageModule { }
