@@ -9,6 +9,7 @@ import { IconSelectorComponent } from './icon-selector/icon-selector.component';
 import { PlanComponent } from './plan/plan.component';
 import { StatsComponent } from './stats/stats.component';
 import { ForumComponent } from './forum/forum.component';
+import { KnowledgeComponent } from './knowledge/knowledge.component';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { ForumComponent } from './forum/forum.component';
         IconSelectorComponent,
         PlanComponent,
         StatsComponent,
-        ForumComponent
+        ForumComponent,
+        KnowledgeComponent
     ]
 })
 export class LandingPageModule { }
