@@ -11,6 +11,8 @@ import { StatsComponent } from './stats/stats.component';
 import { ForumComponent } from './forum/forum.component';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
 import { FooterComponent } from './footer/footer.component';
+import { MethodComponent } from './method/method.component';
+import { ProsTestimonialsComponent } from './pros-testimonials/pros-testimonials.component';
 
 @NgModule({
     imports: [
@@ -26,7 +28,9 @@ import { FooterComponent } from './footer/footer.component';
         StatsComponent,
         ForumComponent,
         KnowledgeComponent,
-        FooterComponent
+        FooterComponent,
+        MethodComponent,
+        ProsTestimonialsComponent
     ]
 })
 export class LandingPageModule { }

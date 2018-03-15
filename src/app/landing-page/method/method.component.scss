@@ -1,0 +1,31 @@
+.method {
+    padding-bottom: 100px;
+
+    & .introduction {
+        width: 50%;
+        margin: 5px;
+        background-image: url('/assets/images/home/method.png');
+        background-position: center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+    }
+    
+    .content {
+        width: 50%;
+        margin: 5px;
+        background-color: #F5F5F5;
+        padding: 100px 50px !important;
+    
+        & h2 {
+            font-family: 'Myriad Pro Bold';
+            font-size: 28px;
+            padding: 0px 0px 30px 0px !important;
+        }
+    
+        & p {
+            font-family: 'Myriad Pro Light';
+            font-size: 16px;
+        }
+    }
+}
