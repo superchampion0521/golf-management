@@ -1,0 +1,30 @@
+.frequently-asked {
+    padding-bottom: 100px;
+
+    & .title {
+        & h1 {
+            text-align: center;
+            font-family: 'Myriad Pro Bold';
+            font-size: 36px;
+            padding: 50px;
+        }
+    }
+
+    & .questions {
+        padding: 0px 150px !important;
+
+        & div {
+            width: 50%;
+            padding: 15px !important;
+
+            & a {
+                font-family: 'Myriad Pro Bold';
+                color: #383838;
+                font-size: 14px;
+                padding: 10px;
+                width: 100%;
+                border-bottom: 5px solid #08ABF0;
+            }
+        }
+    }
+}
