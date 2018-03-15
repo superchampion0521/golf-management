@@ -13,6 +13,7 @@ import { KnowledgeComponent } from './knowledge/knowledge.component';
 import { FooterComponent } from './footer/footer.component';
 import { MethodComponent } from './method/method.component';
 import { ProsTestimonialsComponent } from './pros-testimonials/pros-testimonials.component';
+import { FrequentlyAskedComponent } from './frequently-asked/frequently-asked.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { ProsTestimonialsComponent } from './pros-testimonials/pros-testimonials
         KnowledgeComponent,
         FooterComponent,
         MethodComponent,
-        ProsTestimonialsComponent
+        ProsTestimonialsComponent,
+        FrequentlyAskedComponent
     ]
 })
 export class LandingPageModule { }
