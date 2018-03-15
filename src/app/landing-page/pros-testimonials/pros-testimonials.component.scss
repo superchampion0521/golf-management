@@ -1,0 +1,52 @@
+.pros-testimonials {
+    padding-bottom: 100px;
+
+    & .title {
+        font-family: 'Myriad Pro Bold';
+        font-size: 40px;
+        text-align: center;
+    }
+
+    & .review {
+        width: 50%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-bottom: 50px !important;
+
+        & p {
+            text-align: center;
+            font-family: 'Myriad Pro Light';
+            font-size: 14px;
+        }
+    }
+
+    & .clients {
+        & div {
+            text-align: center;
+            padding: 0px 50px !important;
+
+            &.active {
+                & img {
+                    -webkit-filter: grayscale(0%);
+                    filter: grayscale(0%);
+                }
+            }
+
+            & img {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+                padding-bottom: 30px;
+            }
+
+            & span {
+                font-family: 'Myriad Pro Regular';
+                font-size: 14px;
+
+                & b {
+                    font-family: 'Myriad Pro Bold';
+                }
+            }
+        }
+    }
+}
