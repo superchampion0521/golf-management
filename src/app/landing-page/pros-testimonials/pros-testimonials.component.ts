@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pros-testimonials',
+  selector: 'app-landing-page-pros-testimonials',
   templateUrl: './pros-testimonials.component.html',
   styleUrls: ['./pros-testimonials.component.scss']
 })
