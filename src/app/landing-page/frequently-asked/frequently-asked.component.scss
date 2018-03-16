@@ -21,13 +21,31 @@
                 font-family: 'Myriad Pro Bold';
                 color: #383838;
                 font-size: 14px;
-                padding-bottom: 10px;
+                padding: 10px 10px !important;
                 width: 100%;
                 border-bottom: 5px solid #08ABF0;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #08ABF0;
+                    color: #FFFFFF;
+
+                    & i {
+                        color: #FFFFFF;
+                    }
+                }
 
                 & i {
                     float: right;
                 }
+            }
+
+            & div {
+                background-color: #F5F5F5;
+                width: 100%;
+                padding: 10px;
+                font-family: 'Myriad Pro Regular';
+                font-size: 12px;
             }
         }
     }
