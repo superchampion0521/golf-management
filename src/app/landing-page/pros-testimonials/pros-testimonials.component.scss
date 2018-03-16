@@ -36,7 +36,8 @@
             & img {
                 -webkit-filter: grayscale(100%);
                 filter: grayscale(100%);
-                padding-bottom: 30px;
+                margin-bottom: 30px;
+                width: 75px;
             }
 
             & span {
@@ -57,5 +58,13 @@
         left: 0;
         transform: translateX(0);
         padding: 0px 30px !important;
+
+        & .clients {
+            & div {
+                & span {
+                    font-size: 12px;
+                }
+            }
+        }
     }
 }
