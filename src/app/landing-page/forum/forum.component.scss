@@ -2,7 +2,7 @@ $title-color: #FFFFFF;
 
 .splash {
     width: 100%;
-    background-image: url('/assets/images/home/forums.png');
+    background-image: url('/assets/images/home/stats.png');
     background-position: center;
     background-size: cover;
     -webkit-background-size: cover;
@@ -11,13 +11,15 @@ $title-color: #FFFFFF;
     padding: 250px 100px !important;
 
     & h1 {
-        font-family: 'Bebas Neue';
+        font-family: 'Bebas Neue Regular';
         font-size: 100px;
         color: $title-color;
     }
 }
 
 .content {
+    margin-bottom: -60px;
+
     & .about {
         width: 40%;
         padding: 100px !important;
@@ -27,21 +29,21 @@ $title-color: #FFFFFF;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
-
+            
             & .title {
                 font-family: 'Myriad Pro Semibold';
                 font-size: 32px;
             }
-    
+
             & .explain {
                 font-family: 'Myriad Pro Light';
                 font-size: 18px;
                 margin-top: 60px;
             }
-    
+
             & .footer {
                 font-family: 'Myriad Pro Bold';
-                font-size: 24px;
+                font-size: 18px;
                 margin-top: 50px;
             }
         }
@@ -55,7 +57,6 @@ $title-color: #FFFFFF;
 
         & img {
             width: 100%;
-            box-shadow: 5px 5px 80px 5px #B0B0B0;
         }
     }
 }
@@ -71,7 +72,7 @@ $title-color: #FFFFFF;
             }
 
             & p {
-                font-size: 18px;
+                font-size: 20px;
                 margin-top: 30px;
             }
         }
@@ -137,24 +138,30 @@ $title-color: #FFFFFF;
     }
 
     .content {
+        margin-bottom: 100px;
+
         & .about {
-            padding: 25px 25px !important;
-            width: 50%;
+            width: 100%;
+            padding: 0 25px !important;
+            text-align: center;
+            height: 100%;
+            margin-top: -80px;
+            margin-bottom: 0px;
 
-            & h2 {
-                font-size: 20px;
-            }
+            & .detail {
+                top: 0;
+                transform: translateY(0);
 
-            & p {
-                font-size: 14px;
-                margin-top: 20px;
+                & h2 {
+                    font-size: 24px;
+                }
             }
         }
 
         & .portfolio {
-            width: 50%;
-            padding-right: 25px !important;
-            top: -50px;
+            width: 100%;
+            top: -120px;
+            padding: 0 50px !important;
         }
     }
 }
@@ -169,24 +176,30 @@ $title-color: #FFFFFF;
     }
 
     .content {
+        margin-bottom: 100px;
+
         & .about {
             width: 100%;
-            padding: 60px 25px !important;
+            padding: 0 25px !important;
+            text-align: center;
+            height: 100%;
+            margin-top: -80px;
+            margin-bottom: 0px;
 
-            & h2 {
-                font-size: 24px;
-            }
+            & .detail {
+                top: 0;
+                transform: translateY(0);
 
-            & p {
-                font-size: 14px;
-                margin-top: 20px;
+                & h2 {
+                    font-size: 24px;
+                }
             }
         }
 
         & .portfolio {
             width: 100%;
-            top: 0px;
-            padding: 25px !important;
+            top: -100px;
+            padding: 0 50px !important;
         }
     }
 }

@@ -1,5 +1,10 @@
 .pros-testimonials {
-    padding-bottom: 100px;
+    padding: 0px !important;
+    margin-bottom: 100px;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
     & .title {
         font-family: 'Myriad Pro Bold';
@@ -8,11 +13,7 @@
     }
 
     & .review {
-        width: 50%;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        padding-bottom: 50px !important;
+        margin-bottom: 50px;
 
         & p {
             text-align: center;
@@ -24,7 +25,6 @@
     & .clients {
         & div {
             text-align: center;
-            padding: 0px 50px !important;
 
             &.active {
                 & img {
@@ -48,5 +48,14 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 576px) {
+    .pros-testimonials {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+        padding: 0px 30px !important;
     }
 }

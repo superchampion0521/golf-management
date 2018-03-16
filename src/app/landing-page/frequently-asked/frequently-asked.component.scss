@@ -1,5 +1,5 @@
 .frequently-asked {
-    padding-bottom: 100px;
+    margin-bottom: 100px;
 
     & .title {
         & h1 {
@@ -21,9 +21,25 @@
                 font-family: 'Myriad Pro Bold';
                 color: #383838;
                 font-size: 14px;
-                padding: 10px;
+                padding-bottom: 10px;
                 width: 100%;
                 border-bottom: 5px solid #08ABF0;
+
+                & i {
+                    float: right;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .frequently-asked {
+        & .questions {
+            padding: 0 30px !important;
+
+            & div {
+                width: 100%;
             }
         }
     }
