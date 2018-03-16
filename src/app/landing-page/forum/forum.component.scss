@@ -21,17 +21,29 @@ $title-color: #FFFFFF;
     & .about {
         width: 40%;
         padding: 100px !important;
-        height: 100%;
+        margin-bottom: 160px;
 
-        & h2 {
-            font-family: 'Myriad Pro Semibold';
-            font-size: 32px;
-        }
+        & .detail {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
 
-        & p {
-            font-family: 'Myriad Pro Light';
-            font-size: 18px;
-            margin-top: 60px;
+            & .title {
+                font-family: 'Myriad Pro Semibold';
+                font-size: 32px;
+            }
+    
+            & .explain {
+                font-family: 'Myriad Pro Light';
+                font-size: 18px;
+                margin-top: 60px;
+            }
+    
+            & .footer {
+                font-family: 'Myriad Pro Bold';
+                font-size: 24px;
+                margin-top: 50px;
+            }
         }
     }
 
