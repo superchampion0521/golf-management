@@ -1,9 +1,11 @@
 .icons {
-    padding: 100px 0px !important;
+    margin: 100px 0px;
+    overflow-x: auto;
 
     & div {
         text-align: center;
-        width: 170px;
+        min-width: 170px;
+        margin: 0px 20px;
 
         & span {
             font-size: 16px;
@@ -39,6 +41,10 @@
             font-size: 32px;
         }
 
+        & img {
+            width: 100%;
+        }
+
         & p {
             &.explain {
                 font-family: 'Myriad Pro Light';
@@ -71,7 +77,7 @@
 
 @media (max-width: 1200px) {
     .icons {
-        padding: 100px 0px !important;
+        margin: 100px 0px;
     }
     .content {
         & .about {
@@ -110,7 +116,7 @@
 
 @media (max-width: 992px) {
     .icons {
-        padding: 50px 0px;
+        margin: 50px 0px;
     }
 
     .content {
@@ -151,7 +157,7 @@
 
 @media (max-width: 768px) {
     .icons {
-        padding: 25px 0px;
+        margin: 25px 0px;
     }
 
     .content {
@@ -192,7 +198,7 @@
 
 @media (max-width: 576px) {
     .icons {
-        padding: 25px 0px;
+        margin: 100px 0px 50px 0px;
     }
 
     .content {
@@ -204,12 +210,23 @@
 
             & h2 {
                 font-size: 24px;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            & img {
+                margin-bottom: 40px;
             }
 
             & p {
+                text-align: center;
+
                 &.explain {
                     font-size: 14px;
-                    margin-top: 20px;
+                }
+
+                &.short-explain {
+                    margin-bottom: 40px;
                 }
 
                 &.arrows {

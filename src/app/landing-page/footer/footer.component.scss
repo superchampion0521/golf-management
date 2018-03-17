@@ -4,16 +4,52 @@
     color: #FFFFFF;
 
     & div {
+        margin-bottom: 30px;
+
+        &.title {
+            margin-bottom: 50px;
+
+            & h1 {
+                font-family: 'Bebas Neue Book';
+                font-size: 42px;
+    
+                & b {
+                    font-family: 'Bebas Neue Regular';
+                    font-weight: normal;
+                }
+            }
+
+            & p {
+                font-family: 'Myriad Pro Light';
+                font-size: 12px;
+            }
+        }
+
         & h5 {
             font-family: 'Myriad Pro Semibold';
             font-size: 18px;
-            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         & p {
             font-family: 'Myriad Pro Light';
             font-size: 14px;
-            padding-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        & div {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        & div {
+            text-align: center;
         }
     }
 }

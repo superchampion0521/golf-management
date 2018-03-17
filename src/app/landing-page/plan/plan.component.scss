@@ -2,7 +2,7 @@ $title-color: #FFFFFF;
 $border-color: #F9F9F9;
 
 button {
-    font-family: 'Myriad Pro';
+    font-family: 'Myriad Pro Regular';
     font-size: 16px;
     font-weight: bold;
     width: 100%;
@@ -12,6 +12,10 @@ button {
         color: #FFFFFF;
         padding: 20px;
         border: 1px solid #08ABF0;
+
+        &:hover {
+            background-color: #0AB6FF;
+        }
     }
 
     &.outer {
@@ -36,7 +40,7 @@ button {
     padding: 250px 100px !important;
 
     & h1 {
-        font-family: 'Bebas Neue';
+        font-family: 'Bebas Neue Regular';
         font-size: 100px;
         color: $title-color;
     }
@@ -146,6 +150,101 @@ button {
 
     &.plans {
         height: 100%;
+    }
+}
+
+.mobile-content {
+    padding: 0px 50px !important;
+}
+
+.mobile-content .card {
+    border-width: 0px;
+
+    &.plan {
+        padding: 20px;
+        padding-bottom: 70px;
+        height: 150px;
+        margin-top: -100px;
+
+        & button {
+            width: 50%;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            padding: 0px;
+        }
+    }
+
+    &.basic, &.standard, &.premium {
+        margin-bottom: 20px;
+
+        & .card-header {
+            background-color: #383838;
+            padding: 0px;
+            color: #FEFEFE;
+            font-family: 'Myriad Pro Bold';
+            height: 60px;
+            line-height: 60px;
+            border-width: 0px;
+            margin-bottom: 5px;
+
+            & .title {
+                float: left;
+                font-size: 20px;
+                padding-left: 20px;
+            }
+
+            & .expand {
+                float: right;
+                height: 100%;
+                font-size: 30px;
+                width: 60px;
+                text-align: center;
+                border-left: 5px solid #222222;
+            }
+        }
+
+        & .card-body {
+            background-color: #F5F5F5;
+            height: 60px;
+            padding: 0px;
+            border-width: 0px;
+            line-height: 60px;
+
+            & .price {
+                float: left;
+                font-family: 'Myriad Pro Semibold';
+                font-size: 12px;
+                height: 100%;
+                padding: 0px 0px 0px 20px;
+
+                & .currency {
+                    font-family: 'Myriad Pro Semibold';
+                    font-size: 32px;
+                }
+
+                & .money {
+                    font-family: 'Myriad Pro Bold';
+                    font-weight: bolder;
+                    font-size: 40px;
+                }
+
+                & .period {
+                    font-family: 'Myriad Pro Regular';
+                    font-size: 18px;
+                }
+            }
+
+            & .signup {
+                float: right;
+                height: 100%;
+                font-family: 'Myriad Pro Regular';
+                padding: 0px 40px;
+                font-size: 20px;
+                background-color: #08abf0;
+                color: #FFFFFF;
+            }
+        }
     }
 }
 
