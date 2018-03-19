@@ -70,4 +70,20 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	Route::get(config('laraadmin.adminRoute') . '/backup_dt_ajax', 'LA\BackupsController@dtajax');
 	Route::post(config('laraadmin.adminRoute') . '/create_backup_ajax', 'LA\BackupsController@create_backup_ajax');
 	Route::get(config('laraadmin.adminRoute') . '/downloadBackup/{id}', 'LA\BackupsController@downloadBackup');
+
+	/* ================== Academies ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/academies', 'LA\AcademiesController');
+	Route::get(config('laraadmin.adminRoute') . '/academy_dt_ajax', 'LA\AcademiesController@dtajax');
+
+	/* ================== Courses ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/courses', 'LA\CoursesController');
+	Route::get(config('laraadmin.adminRoute') . '/course_dt_ajax', 'LA\CoursesController@dtajax');
+
+	/* ================== Chapters ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/chapters', 'LA\ChaptersController');
+	Route::get(config('laraadmin.adminRoute') . '/chapter_dt_ajax', 'LA\ChaptersController@dtajax');
+
+	/* ================== Plans ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/plans', 'LA\PlansController');
+	Route::get(config('laraadmin.adminRoute') . '/plan_dt_ajax', 'LA\PlansController@dtajax');
 });
