@@ -19,6 +19,7 @@ class CreateAcademiesTable extends Migration
     {
         Module::generate("Academies", 'academies', 'name', 'fa-cube', [
             ["name", "Academy Name", "String", false, "", 0, 256, true],
+            ["address", "Address", "Address", false, "", 0, 256, false],
         ]);
 		
 		/*

@@ -90,4 +90,8 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Skills ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/skills', 'LA\SkillsController');
 	Route::get(config('laraadmin.adminRoute') . '/skill_dt_ajax', 'LA\SkillsController@dtajax');
+
+	/* ================== Messages ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/messages', 'LA\MessagesController');
+	Route::get(config('laraadmin.adminRoute') . '/message_dt_ajax', 'LA\MessagesController@dtajax');
 });

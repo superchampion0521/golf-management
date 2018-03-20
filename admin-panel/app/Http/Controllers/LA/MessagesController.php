@@ -17,37 +17,37 @@ use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
 
-use App\Models\User;
+use App\Models\Message;
 
-class UsersController extends Controller
+class MessagesController extends Controller
 {
 	public $show_action = true;
-	public $view_col = 'name';
-	public $listing_cols = ['id', 'name', 'context_id', 'email', 'password', 'type'];
+	public $view_col = 'title';
+	public $listing_cols = ['id', 'title', 'content', 'from'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns
 		if(\Dwij\Laraadmin\Helpers\LAHelper::laravel_ver() == 5.3) {
 			$this->middleware(function ($request, $next) {
-				$this->listing_cols = ModuleFields::listingColumnAccessScan('Users', $this->listing_cols);
+				$this->listing_cols = ModuleFields::listingColumnAccessScan('Messages', $this->listing_cols);
 				return $next($request);
 			});
 		} else {
-			$this->listing_cols = ModuleFields::listingColumnAccessScan('Users', $this->listing_cols);
+			$this->listing_cols = ModuleFields::listingColumnAccessScan('Messages', $this->listing_cols);
 		}
 	}
 	
 	/**
-	 * Display a listing of the Users.
+	 * Display a listing of the Messages.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index()
 	{
-		$module = Module::get('Users');
+		$module = Module::get('Messages');
 		
 		if(Module::hasAccess($module->id)) {
-			return View('la.users.index', [
+			return View('la.messages.index', [
 				'show_actions' => $this->show_action,
 				'listing_cols' => $this->listing_cols,
 				'module' => $module
@@ -58,7 +58,7 @@ class UsersController extends Controller
 	}
 
 	/**
-	 * Show the form for creating a new user.
+	 * Show the form for creating a new message.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
@@ -68,16 +68,16 @@ class UsersController extends Controller
 	}
 
 	/**
-	 * Store a newly created user in database.
+	 * Store a newly created message in database.
 	 *
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
 	{
-		if(Module::hasAccess("Users", "create")) {
+		if(Module::hasAccess("Messages", "create")) {
 		
-			$rules = Module::validateRules("Users", $request);
+			$rules = Module::validateRules("Messages", $request);
 			
 			$validator = Validator::make($request->all(), $rules);
 			
@@ -85,9 +85,9 @@ class UsersController extends Controller
 				return redirect()->back()->withErrors($validator)->withInput();
 			}
 			
-			$insert_id = Module::insert("Users", $request);
+			$insert_id = Module::insert("Messages", $request);
 			
-			return redirect()->route(config('laraadmin.adminRoute') . '.users.index');
+			return redirect()->route(config('laraadmin.adminRoute') . '.messages.index');
 			
 		} else {
 			return redirect(config('laraadmin.adminRoute')."/");
@@ -95,30 +95,30 @@ class UsersController extends Controller
 	}
 
 	/**
-	 * Display the specified user.
+	 * Display the specified message.
 	 *
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show($id)
 	{
-		if(Module::hasAccess("Users", "view")) {
+		if(Module::hasAccess("Messages", "view")) {
 			
-			$user = User::find($id);
-			if(isset($user->id)) {
-				$module = Module::get('Users');
-				$module->row = $user;
+			$message = Message::find($id);
+			if(isset($message->id)) {
+				$module = Module::get('Messages');
+				$module->row = $message;
 				
-				return view('la.users.show', [
+				return view('la.messages.show', [
 					'module' => $module,
 					'view_col' => $this->view_col,
 					'no_header' => true,
 					'no_padding' => "no-padding"
-				])->with('user', $user);
+				])->with('message', $message);
 			} else {
 				return view('errors.404', [
 					'record_id' => $id,
-					'record_name' => ucfirst("user"),
+					'record_name' => ucfirst("message"),
 				]);
 			}
 		} else {
@@ -127,28 +127,28 @@ class UsersController extends Controller
 	}
 
 	/**
-	 * Show the form for editing the specified user.
+	 * Show the form for editing the specified message.
 	 *
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit($id)
 	{
-		if(Module::hasAccess("Users", "edit")) {			
-			$user = User::find($id);
-			if(isset($user->id)) {	
-				$module = Module::get('Users');
+		if(Module::hasAccess("Messages", "edit")) {			
+			$message = Message::find($id);
+			if(isset($message->id)) {	
+				$module = Module::get('Messages');
 				
-				$module->row = $user;
+				$module->row = $message;
 				
-				return view('la.users.edit', [
+				return view('la.messages.edit', [
 					'module' => $module,
 					'view_col' => $this->view_col,
-				])->with('user', $user);
+				])->with('message', $message);
 			} else {
 				return view('errors.404', [
 					'record_id' => $id,
-					'record_name' => ucfirst("user"),
+					'record_name' => ucfirst("message"),
 				]);
 			}
 		} else {
@@ -157,7 +157,7 @@ class UsersController extends Controller
 	}
 
 	/**
-	 * Update the specified user in storage.
+	 * Update the specified message in storage.
 	 *
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  int  $id
@@ -165,9 +165,9 @@ class UsersController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		if(Module::hasAccess("Users", "edit")) {
+		if(Module::hasAccess("Messages", "edit")) {
 			
-			$rules = Module::validateRules("Users", $request, true);
+			$rules = Module::validateRules("Messages", $request, true);
 			
 			$validator = Validator::make($request->all(), $rules);
 			
@@ -175,9 +175,9 @@ class UsersController extends Controller
 				return redirect()->back()->withErrors($validator)->withInput();;
 			}
 			
-			$insert_id = Module::updateRow("Users", $request, $id);
+			$insert_id = Module::updateRow("Messages", $request, $id);
 			
-			return redirect()->route(config('laraadmin.adminRoute') . '.users.index');
+			return redirect()->route(config('laraadmin.adminRoute') . '.messages.index');
 			
 		} else {
 			return redirect(config('laraadmin.adminRoute')."/");
@@ -185,18 +185,18 @@ class UsersController extends Controller
 	}
 
 	/**
-	 * Remove the specified user from storage.
+	 * Remove the specified message from storage.
 	 *
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy($id)
 	{
-		if(Module::hasAccess("Users", "delete")) {
-			User::find($id)->delete();
+		if(Module::hasAccess("Messages", "delete")) {
+			Message::find($id)->delete();
 			
 			// Redirecting to index() method
-			return redirect()->route(config('laraadmin.adminRoute') . '.users.index');
+			return redirect()->route(config('laraadmin.adminRoute') . '.messages.index');
 		} else {
 			return redirect(config('laraadmin.adminRoute')."/");
 		}
@@ -209,11 +209,11 @@ class UsersController extends Controller
 	 */
 	public function dtajax()
 	{
-		$values = DB::table('users')->select($this->listing_cols)->whereNull('deleted_at');
+		$values = DB::table('messages')->select($this->listing_cols)->whereNull('deleted_at');
 		$out = Datatables::of($values)->make();
 		$data = $out->getData();
 
-		$fields_popup = ModuleFields::getModuleFields('Users');
+		$fields_popup = ModuleFields::getModuleFields('Messages');
 		
 		for($i=0; $i < count($data->data); $i++) {
 			for ($j=0; $j < count($this->listing_cols); $j++) { 
@@ -222,7 +222,7 @@ class UsersController extends Controller
 					$data->data[$i][$j] = ModuleFields::getFieldValue($fields_popup[$col], $data->data[$i][$j]);
 				}
 				if($col == $this->view_col) {
-					$data->data[$i][$j] = '<a href="'.url(config('laraadmin.adminRoute') . '/users/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
+					$data->data[$i][$j] = '<a href="'.url(config('laraadmin.adminRoute') . '/messages/'.$data->data[$i][0]).'">'.$data->data[$i][$j].'</a>';
 				}
 				// else if($col == "author") {
 				//    $data->data[$i][$j];
@@ -231,12 +231,12 @@ class UsersController extends Controller
 			
 			if($this->show_action) {
 				$output = '';
-				if(Module::hasAccess("Users", "edit")) {
-					$output .= '<a href="'.url(config('laraadmin.adminRoute') . '/users/'.$data->data[$i][0].'/edit').'" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-edit"></i></a>';
+				if(Module::hasAccess("Messages", "edit")) {
+					$output .= '<a href="'.url(config('laraadmin.adminRoute') . '/messages/'.$data->data[$i][0].'/edit').'" class="btn btn-warning btn-xs" style="display:inline;padding:2px 5px 3px 5px;"><i class="fa fa-edit"></i></a>';
 				}
 				
-				if(Module::hasAccess("Users", "delete")) {
-					$output .= Form::open(['route' => [config('laraadmin.adminRoute') . '.users.destroy', $data->data[$i][0]], 'method' => 'delete', 'style'=>'display:inline']);
+				if(Module::hasAccess("Messages", "delete")) {
+					$output .= Form::open(['route' => [config('laraadmin.adminRoute') . '.messages.destroy', $data->data[$i][0]], 'method' => 'delete', 'style'=>'display:inline']);
 					$output .= ' <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-times"></i></button>';
 					$output .= Form::close();
 				}
