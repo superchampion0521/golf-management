@@ -8,7 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Dwij\Laraadmin\Models\Module;
 
-class CreateAcademiesTable extends Migration
+class CreateCoursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,9 +17,9 @@ class CreateAcademiesTable extends Migration
      */
     public function up()
     {
-        Module::generate("Academies", 'academies', 'address', 'fa-cube', [
-            ["name", "Academy Name", "String", false, "", 0, 256, true],
-            ["address", "Address", "Address", false, "", 0, 256, false],
+        Module::generate("Courses", 'courses', 'name', 'fa-cube', [
+            ["academy_id", "Academy", "Dropdown", false, "", 0, 0, false, "@academies"],
+            ["name", "Course Name", "String", true, "", 0, 256, true],
         ]);
 		
 		/*
@@ -65,8 +65,8 @@ class CreateAcademiesTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('academies')) {
-            Schema::drop('academies');
+        if (Schema::hasTable('courses')) {
+            Schema::drop('courses');
         }
     }
 }

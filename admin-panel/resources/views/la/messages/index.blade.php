@@ -1,14 +1,14 @@
 @extends("la.layouts.app")
 
-@section("contentheader_title", "Courses")
-@section("contentheader_description", "Courses listing")
-@section("section", "Courses")
+@section("contentheader_title", "Messages")
+@section("contentheader_description", "Messages listing")
+@section("section", "Messages")
 @section("sub_section", "Listing")
-@section("htmlheader_title", "Courses Listing")
+@section("htmlheader_title", "Messages Listing")
 
 @section("headerElems")
-@la_access("Courses", "create")
-	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Course</button>
+@la_access("Messages", "create")
+	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Message</button>
 @endla_access
 @endsection
 
@@ -45,22 +45,23 @@
 	</div>
 </div>
 
-@la_access("Courses", "create")
+@la_access("Messages", "create")
 <div class="modal fade" id="AddModal" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Add Course</h4>
+				<h4 class="modal-title" id="myModalLabel">Add Message</h4>
 			</div>
-			{!! Form::open(['action' => 'LA\CoursesController@store', 'id' => 'course-add-form']) !!}
+			{!! Form::open(['action' => 'LA\MessagesController@store', 'id' => 'message-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
                     @la_form($module)
 					
 					{{--
-					@la_input($module, 'academy_id')
-					@la_input($module, 'name')
+					@la_input($module, 'title')
+					@la_input($module, 'content')
+					@la_input($module, 'from')
 					--}}
 				</div>
 			</div>
@@ -87,7 +88,7 @@ $(function () {
 	$("#example1").DataTable({
 		processing: true,
         serverSide: true,
-        ajax: "{{ url(config('laraadmin.adminRoute') . '/course_dt_ajax') }}",
+        ajax: "{{ url(config('laraadmin.adminRoute') . '/message_dt_ajax') }}",
 		language: {
 			lengthMenu: "_MENU_",
 			search: "_INPUT_",
@@ -97,7 +98,7 @@ $(function () {
 		columnDefs: [ { orderable: false, targets: [-1] }],
 		@endif
 	});
-	$("#course-add-form").validate({
+	$("#message-add-form").validate({
 		
 	});
 });
