@@ -18,7 +18,7 @@ class CreatePlansTable extends Migration
     public function up()
     {
         Module::generate("Plans", 'plans', 'name', 'fa-cube', [
-            ["name", "Plan Name", "Name", false, "", 0, 256, true],
+            ["name", "Plan Name", "String", false, "", 0, 256, true],
         ]);
 		
 		/*

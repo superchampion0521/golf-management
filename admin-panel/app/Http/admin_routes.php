@@ -86,4 +86,8 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Plans ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/plans', 'LA\PlansController');
 	Route::get(config('laraadmin.adminRoute') . '/plan_dt_ajax', 'LA\PlansController@dtajax');
+
+	/* ================== Skills ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/skills', 'LA\SkillsController');
+	Route::get(config('laraadmin.adminRoute') . '/skill_dt_ajax', 'LA\SkillsController@dtajax');
 });

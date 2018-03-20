@@ -1,14 +1,14 @@
 @extends("la.layouts.app")
 
 @section("contentheader_title")
-	<a href="{{ url(config('laraadmin.adminRoute') . '/academies') }}">Academy</a> :
+	<a href="{{ url(config('laraadmin.adminRoute') . '/skills') }}">Skill</a> :
 @endsection
-@section("contentheader_description", $academy->$view_col)
-@section("section", "Academies")
-@section("section_url", url(config('laraadmin.adminRoute') . '/academies'))
+@section("contentheader_description", $skill->$view_col)
+@section("section", "Skills")
+@section("section_url", url(config('laraadmin.adminRoute') . '/skills'))
 @section("sub_section", "Edit")
 
-@section("htmlheader_title", "Academies Edit : ".$academy->$view_col)
+@section("htmlheader_title", "Skills Edit : ".$skill->$view_col)
 
 @section("main-content")
 
@@ -29,15 +29,15 @@
 	<div class="box-body">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				{!! Form::model($academy, ['route' => [config('laraadmin.adminRoute') . '.academies.update', $academy->id ], 'method'=>'PUT', 'id' => 'academy-edit-form']) !!}
+				{!! Form::model($skill, ['route' => [config('laraadmin.adminRoute') . '.skills.update', $skill->id ], 'method'=>'PUT', 'id' => 'skill-edit-form']) !!}
 					@la_form($module)
 					
 					{{--
-					@la_input($module, 'name')
+					@la_input($module, 'name`')
 					--}}
                     <br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <button class="btn btn-default pull-right"><a href="{{ url(config('laraadmin.adminRoute') . '/academies') }}">Cancel</a></button>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <button class="btn btn-default pull-right"><a href="{{ url(config('laraadmin.adminRoute') . '/skills') }}">Cancel</a></button>
 					</div>
 				{!! Form::close() !!}
 			</div>
@@ -50,7 +50,7 @@
 @push('scripts')
 <script>
 $(function () {
-	$("#academy-edit-form").validate({
+	$("#skill-edit-form").validate({
 		
 	});
 });
