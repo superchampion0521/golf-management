@@ -102,4 +102,8 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Members ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/members', 'LA\MembersController');
 	Route::get(config('laraadmin.adminRoute') . '/member_dt_ajax', 'LA\MembersController@dtajax');
+
+	/* ================== Videos ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/videos', 'LA\VideosController');
+	Route::get(config('laraadmin.adminRoute') . '/video_dt_ajax', 'LA\VideosController@dtajax');
 });

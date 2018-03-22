@@ -19,6 +19,7 @@ class CreateUnimodulesTable extends Migration
     {
         Module::generate("Unimodules", 'unimodules', 'name', 'fa-cube', [
             ["name", "Module Name", "String", false, "", 0, 256, true],
+            ["course_id", "Course Name", "Dropdown", false, "", 0, 0, false, "@courses"],
         ]);
 		
 		/*

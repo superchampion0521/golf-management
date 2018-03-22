@@ -60,6 +60,7 @@
 					
 					{{--
 					@la_input($module, 'name`')
+					@la_input($module, 'chapter_id')
 					--}}
 				</div>
 			</div>
