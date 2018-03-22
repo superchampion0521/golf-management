@@ -23,7 +23,7 @@ class UniModulesController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'name';
-	public $listing_cols = ['id', 'name'];
+	public $listing_cols = ['id', 'name', 'course_id'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

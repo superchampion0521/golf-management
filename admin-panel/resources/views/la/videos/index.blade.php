@@ -1,14 +1,14 @@
 @extends("la.layouts.app")
 
-@section("contentheader_title", "Academies")
-@section("contentheader_description", "Academies listing")
-@section("section", "Academies")
+@section("contentheader_title", "Videos")
+@section("contentheader_description", "Videos listing")
+@section("section", "Videos")
 @section("sub_section", "Listing")
-@section("htmlheader_title", "Academies Listing")
+@section("htmlheader_title", "Videos Listing")
 
 @section("headerElems")
-@la_access("Academies", "create")
-	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Academy</button>
+@la_access("Videos", "create")
+	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Video</button>
 @endla_access
 @endsection
 
@@ -45,24 +45,23 @@
 	</div>
 </div>
 
-@la_access("Academies", "create")
+@la_access("Videos", "create")
 <div class="modal fade" id="AddModal" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Add Academy</h4>
+				<h4 class="modal-title" id="myModalLabel">Add Video</h4>
 			</div>
-			{!! Form::open(['action' => 'LA\AcademiesController@store', 'id' => 'academy-add-form']) !!}
+			{!! Form::open(['action' => 'LA\VideosController@store', 'id' => 'video-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
                     @la_form($module)
 					
 					{{--
 					@la_input($module, 'name')
-					@la_input($module, 'address')
-					@la_input($module, 'phone')
-					@la_input($module, 'dec')
+					@la_input($module, 'url')
+					@la_input($module, 'skill_id')
 					--}}
 				</div>
 			</div>
@@ -89,7 +88,7 @@ $(function () {
 	$("#example1").DataTable({
 		processing: true,
         serverSide: true,
-        ajax: "{{ url(config('laraadmin.adminRoute') . '/academy_dt_ajax') }}",
+        ajax: "{{ url(config('laraadmin.adminRoute') . '/video_dt_ajax') }}",
 		language: {
 			lengthMenu: "_MENU_",
 			search: "_INPUT_",
@@ -99,7 +98,7 @@ $(function () {
 		columnDefs: [ { orderable: false, targets: [-1] }],
 		@endif
 	});
-	$("#academy-add-form").validate({
+	$("#video-add-form").validate({
 		
 	});
 });

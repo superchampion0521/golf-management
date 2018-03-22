@@ -109,6 +109,8 @@
 					<div class="panel-body">
 						@la_display($module, 'name')
 						@la_display($module, 'address')
+						@la_display($module, 'phone')
+						@la_display($module, 'dec')
 					</div>
 				</div>
 			</div>

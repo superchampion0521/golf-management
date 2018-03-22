@@ -1,14 +1,14 @@
 @extends("la.layouts.app")
 
 @section("contentheader_title")
-	<a href="{{ url(config('laraadmin.adminRoute') . '/chapters') }}">Chapter</a> :
+	<a href="{{ url(config('laraadmin.adminRoute') . '/videos') }}">Video</a> :
 @endsection
-@section("contentheader_description", $chapter->$view_col)
-@section("section", "Chapters")
-@section("section_url", url(config('laraadmin.adminRoute') . '/chapters'))
+@section("contentheader_description", $video->$view_col)
+@section("section", "Videos")
+@section("section_url", url(config('laraadmin.adminRoute') . '/videos'))
 @section("sub_section", "Edit")
 
-@section("htmlheader_title", "Chapters Edit : ".$chapter->$view_col)
+@section("htmlheader_title", "Videos Edit : ".$video->$view_col)
 
 @section("main-content")
 
@@ -29,16 +29,17 @@
 	<div class="box-body">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				{!! Form::model($chapter, ['route' => [config('laraadmin.adminRoute') . '.chapters.update', $chapter->id ], 'method'=>'PUT', 'id' => 'chapter-edit-form']) !!}
+				{!! Form::model($video, ['route' => [config('laraadmin.adminRoute') . '.videos.update', $video->id ], 'method'=>'PUT', 'id' => 'video-edit-form']) !!}
 					@la_form($module)
 					
 					{{--
 					@la_input($module, 'name')
-					@la_input($module, 'module_id')
+					@la_input($module, 'url')
+					@la_input($module, 'skill_id')
 					--}}
                     <br>
 					<div class="form-group">
-						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <button class="btn btn-default pull-right"><a href="{{ url(config('laraadmin.adminRoute') . '/chapters') }}">Cancel</a></button>
+						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <button class="btn btn-default pull-right"><a href="{{ url(config('laraadmin.adminRoute') . '/videos') }}">Cancel</a></button>
 					</div>
 				{!! Form::close() !!}
 			</div>
@@ -51,7 +52,7 @@
 @push('scripts')
 <script>
 $(function () {
-	$("#chapter-edit-form").validate({
+	$("#video-edit-form").validate({
 		
 	});
 });

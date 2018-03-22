@@ -19,6 +19,7 @@ class CreateChaptersTable extends Migration
     {
         Module::generate("Chapters", 'chapters', 'name', 'fa-cube', [
             ["name", "Chapter Name", "String", false, "", 0, 256, true],
+            ["module_id", "Module Name", "Dropdown", false, "", 0, 0, false, "@unimodules"],
         ]);
 		
 		/*
