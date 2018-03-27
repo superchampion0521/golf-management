@@ -9,13 +9,11 @@
         &.title {
             margin-bottom: 50px;
 
-            & h1 {
-                font-family: 'Bebas Neue Book';
-                font-size: 42px;
-    
-                & b {
-                    font-family: 'Bebas Neue Regular';
-                    font-weight: normal;
+            & .logo {
+                margin-bottom: 10px;
+
+                & img {
+                    height: 40px;
                 }
             }
 

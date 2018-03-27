@@ -16,16 +16,8 @@
         & .navbar-header {
             width: 100%;
 
-            & .navbar-brand {
-                color: #FFFFFF;
-                font-size: 25px;
-                font-family: 'Bebas Neue Book';
-                line-height: 50px;
-
-                & b {
-                    font-family: 'Bebas Neue Regular';
-                    font-weight: normal;
-                }
+            & .navbar-brand img {
+                height: 40px;
             }
     
             & .navbar-toggle {
