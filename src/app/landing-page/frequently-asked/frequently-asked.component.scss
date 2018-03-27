@@ -1,3 +1,11 @@
+[data-toggle="collapse"] .fa:before {  
+    content: "\f068";
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+    content: "\f067";
+}
+
 .frequently-asked {
     margin-bottom: 100px;
 
