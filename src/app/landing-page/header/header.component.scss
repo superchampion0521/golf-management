@@ -23,10 +23,9 @@
             & .navbar-toggle {
                 float: right;
                 display: inherit !important;
-    
-                & .icon-bar {
-                    background-color: #FFFFFF;
-                }
+                background-color: transparent;
+                border-width: 0px;
+                color: white;
             }
         }
     }
