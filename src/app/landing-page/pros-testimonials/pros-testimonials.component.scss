@@ -1,7 +1,8 @@
 .pros-testimonials {
     padding: 0px !important;
     margin-bottom: 100px;
-    width: 50%;
+    max-width: 600px;
+    width: 100%;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -25,8 +26,10 @@
     & .clients {
         & div {
             text-align: center;
+            opacity: 0.5;
 
             &.active {
+                opacity: 1;
                 & img {
                     -webkit-filter: grayscale(0%);
                     filter: grayscale(0%);
