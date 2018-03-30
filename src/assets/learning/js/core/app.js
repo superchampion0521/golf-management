@@ -25,16 +25,17 @@
         setTimeout(function(){
             $html.removeClass('loading').addClass('loaded');
         }, 1200);
-
+        
+        console.log($.app.menu);
         $.app.menu.init(compactMenu);
 
         // Navigation configurations
         var config = {
             speed: 300 // set speed to expand / collpase menu
         };
-        if($.app.nav.initialized === false){
+        /*if($.app.nav.initialized === false){
             $.app.nav.init(config);
-        }
+        }*/
 
         Unison.on('change', function(bp) {
             $.app.menu.change();
