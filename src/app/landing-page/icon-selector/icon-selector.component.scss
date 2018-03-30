@@ -2,29 +2,48 @@
     margin: 100px 0px;
     overflow-x: auto;
 
-    & div {
-        text-align: center;
-        min-width: 170px;
-        margin: 0px 20px;
+    & li {
+        padding-bottom: 5px;
 
-        & span {
-            font-size: 16px;
-            font-family: 'Myriad Pro Regular';
-            border-bottom: 3px solid #FFFFFF;
-            padding-bottom: 5px;
-            margin: 10px;
-        }
+        & a {
+            text-decoration: none;
+            color: black;
 
-        &:hover, &.active {
-            & span {
-                border-bottom: 3px solid #0D97BA;
-                font-family: 'Myriad Pro Bold';
+            &.active {
+                background-color: transparent;
+                & div {
+                    & span {
+                        border-bottom: 3px solid #0D97BA;
+                        font-family: 'Myriad Pro Bold';
+                    }
+                }
             }
-        }
 
-        & img {
-            height: 43px;
-            padding-bottom: 15px;
+            & div {
+                text-align: center;
+                min-width: 170px;
+                margin: 0px 20px;
+        
+                & span {
+                    font-size: 16px;
+                    font-family: 'Myriad Pro Regular';
+                    border-bottom: 3px solid #FFFFFF;
+                    padding-bottom: 5px;
+                    margin: 10px;
+                }
+        
+                &:hover {
+                    & span {
+                        border-bottom: 3px solid #0D97BA;
+                        font-family: 'Myriad Pro Bold';
+                    }
+                }
+        
+                & img {
+                    height: 43px;
+                    padding-bottom: 15px;
+                }
+            }
         }
     }
 }
@@ -62,16 +81,27 @@
                 font-family: 'Myriad Pro Light';
                 font-size: 28px;
                 margin-top: 50px;
+
+                & i {
+                    cursor: pointer;
+                    
+                    &.fa-chevron-right {
+                        padding-left: 25px;
+                    }
+                }
             }
         }
     }
 
     & .portfolio {
         width: 60%;
-        margin-right: -85px !important;
+        clip: 100px 100px 100px 100px;
 
         & img {
             width: 100%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }

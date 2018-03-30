@@ -25,7 +25,10 @@
                 display: inherit !important;
                 background-color: transparent;
                 border-width: 0px;
-                color: white;
+                
+                & img {
+                    height: 20px;
+                }
             }
         }
     }
@@ -58,7 +61,8 @@
                 border-radius: 4px;
                 padding: 20px;
                 font-size: 12px;
-                width: 350px;
+                max-width: 400px;
+                width: 100%;
 
                 & .card-header {
                     background-color: transparent;
@@ -67,15 +71,33 @@
                     & button {
                         padding: 20px;
                         font-size: 14px;
-                        border: 1px solid #F2F2F2;
+                        border: 2px solid #F2F2F2;
+                        font-size: 16px;
+                        border-radius: 0px;
 
                         &.btn-facebook {
                             background-color: #2A508E;
                             color: #FFFFFF;
                         }
 
+                        & img {
+                            height: 18px;
+                            float: left;
+                            margin-top: 3px;
+                        }
+
                         & span {
                             float: left;
+                            margin-top: 4px;
+                            background-color: #FFFFFF;
+                            color: #2A508E;
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 3px;
+                            font-size: 18px;
+                            padding-top: 3px;
+                            text-align: right;
+                            padding-right: 3px;
                         }
                     }
                 }
@@ -83,10 +105,20 @@
                 & .card-body {
                     & label {
                         padding: 8px 0px;
+                        margin-bottom: 0px;
+                        font-size: 14px;
+                    }
 
-                        &.showpass {
-                            float: right;
-                            color: #9C9D97;
+                    & .showpass {
+                        float: right;
+                        color: #9C9D97;
+                        font-size: 10px;
+                        padding: 0px;
+                        padding-top: 14px;
+                        line-height: 18px;
+
+                        & i {
+                            font-size: 16px;
                         }
                     }
 
