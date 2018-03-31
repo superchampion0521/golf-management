@@ -8,29 +8,46 @@
     z-index: -1;
 
     & .menu nav {
-        color: #FFFFFF;
-        font-size: 25px;
-        font-family: 'Myriad Pro Regular';
-        padding: 25px;
+        background-color: #083C4F;
 
-        & .navbar-header {
-            width: 100%;
+        & .navbar-brand img {
+            height: 20px;
+        }
 
-            & .navbar-brand img {
-                height: 40px;
-            }
-    
-            & .navbar-toggle {
-                float: right;
-                display: inherit !important;
-                background-color: transparent;
-                border-width: 0px;
-                
-                & img {
-                    height: 20px;
-                }
+        & .nav-items {
+            margin-top: -.5rem;
+            margin-bottom: -.5rem;
+            margin-right: -1rem;
+            height: 60px;
+
+            & .nav-item {
+                background: #063647;
+                color: white;
+                font-size: 10px;
+                height: 100%;
+                padding: 15px;
+                margin-left: 2px;
             }
         }
+
+        // & .navbar-header {
+        //     width: 100%;
+
+        //     & .navbar-brand img {
+        //         height: 40px;
+        //     }
+    
+        //     & .navbar-toggle {
+        //         float: right;
+        //         display: inherit !important;
+        //         background-color: transparent;
+        //         border-width: 0px;
+                
+        //         & img {
+        //             height: 20px;
+        //         }
+        //     }
+        // }
     }
 
     & .content {
@@ -41,8 +58,8 @@
 
             & h1 {
                 display: inline-block;
-                font-family: 'Bebas Neue Regular';
-                font-size: 100px;
+                font-family: 'Montserrat Black', arial;
+                font-size: 60px;
                 color: #FFFFFF;
                 position: relative;
                 top: 50%;
@@ -78,6 +95,11 @@
                         &.btn-facebook {
                             background-color: #2A508E;
                             color: #FFFFFF;
+                        }
+
+                        &.btn-google {
+                            background-color: #333;
+                            color: white;
                         }
 
                         & img {
@@ -143,6 +165,15 @@
                     }
                 }
             }
+        }
+    }
+
+    & .bottom-icons {
+        padding-bottom: 50px;
+        & img {
+            height: 40px;
+            padding-left: 50px;
+            padding-right: 50px;
         }
     }
 }

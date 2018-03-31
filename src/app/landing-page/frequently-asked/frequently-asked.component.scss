@@ -1,3 +1,5 @@
+@import '../global.scss';
+
 [data-toggle="collapse"] .fa:before {  
     content: "\f068";
 }
@@ -10,10 +12,8 @@
     margin-bottom: 100px;
 
     & .title {
-        & h1 {
+        & h2 {
             text-align: center;
-            font-family: 'Myriad Pro Bold';
-            font-size: 36px;
             padding: 50px;
         }
     }
