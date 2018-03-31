@@ -1,73 +1,77 @@
 .pros-testimonials {
-    padding: 0px !important;
     margin-bottom: 100px;
-    max-width: 600px;
-    width: 100%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    & .title {
-        font-family: 'Myriad Pro Bold';
-        font-size: 40px;
-        text-align: center;
-    }
-
-    & .review {
-        margin-bottom: 50px;
-
-        & p {
-            text-align: center;
-            font-family: 'Myriad Pro Light';
-            font-size: 14px;
-        }
-    }
-
-    & .clients {
-        & div {
-            text-align: center;
-            opacity: 0.5;
-
-            &.active {
-                opacity: 1;
-                & img {
-                    -webkit-filter: grayscale(0%);
-                    filter: grayscale(0%);
-                }
-            }
-
-            & img {
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
-                margin-bottom: 30px;
-                width: 75px;
-            }
-
-            & span {
-                font-family: 'Myriad Pro Regular';
-                font-size: 14px;
-
-                & b {
-                    font-family: 'Myriad Pro Bold';
-                }
-            }
-        }
-    }
 }
 
-@media (max-width: 576px) {
-    .pros-testimonials {
-        width: 100%;
-        left: 0;
-        transform: translateX(0);
-        padding: 0px 30px !important;
+// .pros-testimonials {
+//     padding: 0px !important;
+//     margin-bottom: 100px;
+//     max-width: 600px;
+//     width: 100%;
+//     position: relative;
+//     left: 50%;
+//     transform: translateX(-50%);
 
-        & .clients {
-            & div {
-                & span {
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-}
+//     & .title {
+//         font-family: 'Myriad Pro Bold';
+//         font-size: 40px;
+//         text-align: center;
+//     }
+
+//     & .review {
+//         margin-bottom: 50px;
+
+//         & p {
+//             text-align: center;
+//             font-family: 'Myriad Pro Light';
+//             font-size: 14px;
+//         }
+//     }
+
+//     & .clients {
+//         & div {
+//             text-align: center;
+//             opacity: 0.5;
+
+//             &.active {
+//                 opacity: 1;
+//                 & img {
+//                     -webkit-filter: grayscale(0%);
+//                     filter: grayscale(0%);
+//                 }
+//             }
+
+//             & img {
+//                 -webkit-filter: grayscale(100%);
+//                 filter: grayscale(100%);
+//                 margin-bottom: 30px;
+//                 width: 75px;
+//             }
+
+//             & span {
+//                 font-family: 'Myriad Pro Regular';
+//                 font-size: 14px;
+
+//                 & b {
+//                     font-family: 'Myriad Pro Bold';
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 576px) {
+//     .pros-testimonials {
+//         width: 100%;
+//         left: 0;
+//         transform: translateX(0);
+//         padding: 0px 30px !important;
+
+//         & .clients {
+//             & div {
+//                 & span {
+//                     font-size: 12px;
+//                 }
+//             }
+//         }
+//     }
+// }
