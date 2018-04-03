@@ -23,14 +23,11 @@
             }
         }
 
-        & h5 {
-            font-family: 'Myriad Pro Semibold';
-            font-size: 18px;
+        h5 {
             margin-bottom: 30px;
         }
 
-        & p {
-            font-family: 'Myriad Pro Light';
+        p {
             font-size: 14px;
         }
     }
@@ -46,6 +43,8 @@
 
 @media (max-width: 576px) {
     .footer {
+        padding: 150px 0px;
+
         & div {
             text-align: center;
         }

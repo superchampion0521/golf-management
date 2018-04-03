@@ -1,3 +1,5 @@
+@import '../global.scss';
+
 .splash {
     width: 100%;
     background-image: url('/assets/images/home/home.png');
@@ -6,6 +8,49 @@
     -webkit-background-size: cover;
     -o-background-size: cover;
     z-index: -1;
+
+    button {
+        padding: 20px;
+        font-size: 14px;
+        border-width: 0px;
+        font-size: 16px;
+        border-radius: 0px;
+
+        &.btn-email {
+            background-color: white;
+            color: black;
+        }
+
+        &.btn-facebook {
+            background-color: #2A508E;
+            color: #FFFFFF;
+        }
+
+        &.btn-google {
+            background-color: #333;
+            color: white;
+        }
+
+        & img {
+            height: 18px;
+            float: left;
+            margin-top: 3px;
+        }
+
+        & span {
+            float: left;
+            margin-top: 4px;
+            background-color: #FFFFFF;
+            color: #2A508E;
+            width: 18px;
+            height: 18px;
+            border-radius: 3px;
+            font-size: 18px;
+            padding-top: 3px;
+            text-align: right;
+            padding-right: 3px;
+        }
+    }
 
     & .menu nav {
         background-color: #083C4F;
@@ -27,6 +72,14 @@
                 height: 100%;
                 padding: 15px;
                 margin-left: 2px;
+
+                img {
+                    height: 20px;
+                    display: block;
+                    color: white;
+                    margin: 0 auto;
+                    padding-bottom: 5px;
+                }
             }
         }
 
@@ -58,8 +111,6 @@
 
             & h1 {
                 display: inline-block;
-                font-family: 'Montserrat Black', arial;
-                font-size: 60px;
                 color: #FFFFFF;
                 position: relative;
                 top: 50%;
@@ -84,44 +135,6 @@
                 & .card-header {
                     background-color: transparent;
                     border-width: 0px;
-
-                    & button {
-                        padding: 20px;
-                        font-size: 14px;
-                        border: 2px solid #F2F2F2;
-                        font-size: 16px;
-                        border-radius: 0px;
-
-                        &.btn-facebook {
-                            background-color: #2A508E;
-                            color: #FFFFFF;
-                        }
-
-                        &.btn-google {
-                            background-color: #333;
-                            color: white;
-                        }
-
-                        & img {
-                            height: 18px;
-                            float: left;
-                            margin-top: 3px;
-                        }
-
-                        & span {
-                            float: left;
-                            margin-top: 4px;
-                            background-color: #FFFFFF;
-                            color: #2A508E;
-                            width: 18px;
-                            height: 18px;
-                            border-radius: 3px;
-                            font-size: 18px;
-                            padding-top: 3px;
-                            text-align: right;
-                            padding-right: 3px;
-                        }
-                    }
                 }
 
                 & .card-body {
@@ -166,6 +179,10 @@
                 }
             }
         }
+
+        & .signup-mobile {
+            padding: 30px 50px !important;
+        }
     }
 
     & .bottom-icons {
@@ -185,10 +202,6 @@
             
             & .title {
                 width: 50%;
-
-                & h1 {
-                    font-size: 60px;
-                }
             }
 
             & .signup {
@@ -205,10 +218,6 @@
             
             & .title {
                 width: 100%;
-
-                & h1 {
-                    font-size: 80px;
-                }
             }
 
             & .signup {
@@ -233,6 +242,14 @@
                 & .container-fluid {
                     padding: 0px !important;
                 }
+
+                .navbar-brand {
+                    margin-left: 10px;
+                }
+
+                .nav-items {
+                    margin-right: 0px;
+                }
             }
         }
 
@@ -246,7 +263,6 @@
 
                 & h1 {
                     padding: 0px 30px !important;
-                    font-size: 60px;
                     top: 0;
                     left: 0;
                     transform: translateY(0);
@@ -259,6 +275,14 @@
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
+            }
+        }
+
+        & .bottom-icons {
+            & img {
+                height: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
             }
         }
     }

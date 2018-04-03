@@ -1,8 +1,10 @@
+@import '../global.scss';
+
 $title-color: #FFFFFF;
 $border-color: #F9F9F9;
 
 button {
-    font-family: 'Myriad Pro Regular';
+    font-family: 'Montserrat Regular', arial;
     font-size: 16px;
     font-weight: bold;
     width: 100%;
@@ -38,12 +40,6 @@ button {
     -o-background-size: cover;
     z-index: -1;
     padding: 250px 100px !important;
-
-    & h1 {
-        font-family: 'Montserrat Black', arial;
-        font-size: 100px;
-        color: $title-color;
-    }
 }
 
 .content {
@@ -59,7 +55,7 @@ button {
 
     & .card-header {
         background-color: #FFFFFF;
-        font-family: 'Myriad Pro';
+        font-family: 'Montserrat Bold', arial;
         color: #08ABF0;
         font-weight: bolder;
         font-size: 20px;
@@ -80,9 +76,8 @@ button {
 
             & li {
                 border-bottom: 1px solid $border-color;
-                font-family: 'Myriad Pro';
-                font-size: 16px;
-                font-weight: bolder;
+                font-family: 'Montserrat Bold';
+                font-size: 14px;
                 padding: 10px 0px;
 
                 &.checked {
@@ -119,18 +114,18 @@ button {
                 vertical-align: bottom;
 
                 & .currency {
-                    font-family: 'Myriad Pro Semibold';
+                    font-family: 'Montserrat Light', arial;
                     font-size: 40px;
                 }
 
                 & .money {
-                    font-family: 'Myriad Pro Bold';
+                    font-family: 'Montserrat ExtraBold', arial;
                     font-weight: bolder;
                     font-size: 48px;
                 }
 
                 & .period {
-                    font-family: 'Myriad Pro Regular';
+                    font-family: 'Montserrat Light', arial;
                     font-size: 22px;
                 }
             }
@@ -154,7 +149,7 @@ button {
 }
 
 .mobile-content {
-    padding: 0px 50px !important;
+    padding: 0px 30px !important;
 }
 
 .mobile-content .card {
@@ -219,19 +214,19 @@ button {
                 padding: 0px 0px 0px 20px;
 
                 & .currency {
-                    font-family: 'Myriad Pro Semibold';
-                    font-size: 32px;
+                    font-family: 'Montserrat Light', arial;
+                    font-size: 20px;
                 }
 
                 & .money {
-                    font-family: 'Myriad Pro Bold';
+                    font-family: 'Montserrat ExtraBold', arial;
                     font-weight: bolder;
-                    font-size: 40px;
+                    font-size: 30px;
                 }
 
                 & .period {
-                    font-family: 'Myriad Pro Regular';
-                    font-size: 18px;
+                    font-family: 'Montserrat Light', arial;
+                    font-size: 14px;
                 }
             }
 
@@ -287,10 +282,6 @@ button {
 @media (max-width: 576px) {
     .splash {
         padding: 250px 0px 250px 30px !important;
-
-        & h1 {
-            font-size: 60px;
-        }
     }
 
     .content .card {
@@ -303,10 +294,6 @@ button {
 @media (max-width: 463px) {
     .splash {
         padding: 250px 0px 250px 30px !important;
-
-        & h1 {
-            font-size: 60px;
-        }
     }
 
     .content .card {

@@ -3,26 +3,36 @@
         <nav class="navbar">
             <a class="navbar-brand" href="#"><img src="/assets/images/home/elements/georgeGankasLogoWebWhite.png"></a>
             <div class="float-right nav-items">
-                <div class="nav-item float-left">SIGN UP</div>
-                <div class="nav-item float-right">LOG IN</div>
-            </div>
-            <!-- <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#">
-                        <img src="/assets/images/home/menu-bar.png">
-                    </button>
-                    <a class="navbar-brand" href="#">
-                        <img src="/assets/images/home/elements/georgeGankasLogoWebWhite.png">
-                    </a>
+                <div class="nav-item float-left d-none d-sm-block">
+                    <img src="/assets/images/home/icons/iconSignUpByEmail.png">
+                    SIGN UP
                 </div>
-            </div> -->
+                <div class="nav-item float-right">
+                    <img src="/assets/images/home/icons/iconLogin.png">
+                    LOG IN
+                </div>
+            </div>
         </nav>
     </div>
     <div class="d-flex content justify-content-between flex-column flex-md-row">
         <div class="p-0 title">
             <h1><div>MAKE THE MOST<br>OF YOUR GAME.</div></h1>
         </div>
-        <div class="p-0 signup">
+        <div class="p-0 signup-mobile d-block d-sm-none">
+            <button type="button" class="btn btn-block btn-social btn-facebook">
+                <span class="fa fa-facebook"></span>
+                Sign up with Facebook
+            </button>
+            <button type="button" class="btn btn-block btn-social btn-google">
+                <img src="/assets/images/home/icons/google-icon.svg">
+                Sign up with Google
+            </button>
+            <button type="button" class="btn btn-block btn-social btn-email">
+                <img src="/assets/images/home/icons/iconSignUpByEmailMobile.png">
+                Sign up with Email
+            </button>
+        </div>
+        <div class="p-0 signup d-none d-sm-block">
             <div class="cards">
                 <div class="card-header">
                     <button type="button" class="btn btn-block btn-social btn-facebook">
