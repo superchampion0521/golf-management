@@ -22,8 +22,8 @@ use App\Models\Academy;
 class AcademiesController extends Controller
 {
 	public $show_action = true;
-	public $view_col = 'name';
-	public $listing_cols = ['id', 'name', 'address', 'phone', 'dec'];
+	public $view_col = 'address';
+	public $listing_cols = ['id', 'name', 'address'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

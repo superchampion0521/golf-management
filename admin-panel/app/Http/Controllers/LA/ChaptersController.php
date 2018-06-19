@@ -23,7 +23,7 @@ class ChaptersController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'name';
-	public $listing_cols = ['id', 'name', 'module_id'];
+	public $listing_cols = ['id', 'name'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

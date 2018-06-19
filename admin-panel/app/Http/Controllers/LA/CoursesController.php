@@ -23,7 +23,7 @@ class CoursesController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'name';
-	public $listing_cols = ['id', 'academy_id', 'name'];
+	public $listing_cols = ['id', 'name'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

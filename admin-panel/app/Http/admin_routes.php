@@ -86,24 +86,4 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Plans ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/plans', 'LA\PlansController');
 	Route::get(config('laraadmin.adminRoute') . '/plan_dt_ajax', 'LA\PlansController@dtajax');
-
-	/* ================== Skills ================== */
-	Route::resource(config('laraadmin.adminRoute') . '/skills', 'LA\SkillsController');
-	Route::get(config('laraadmin.adminRoute') . '/skill_dt_ajax', 'LA\SkillsController@dtajax');
-
-	/* ================== Messages ================== */
-	Route::resource(config('laraadmin.adminRoute') . '/messages', 'LA\MessagesController');
-	Route::get(config('laraadmin.adminRoute') . '/message_dt_ajax', 'LA\MessagesController@dtajax');
-
-	/* ================== UniModules ================== */
-	Route::resource(config('laraadmin.adminRoute') . '/unimodules', 'LA\UniModulesController');
-	Route::get(config('laraadmin.adminRoute') . '/unimodule_dt_ajax', 'LA\UniModulesController@dtajax');
-
-	/* ================== Members ================== */
-	Route::resource(config('laraadmin.adminRoute') . '/members', 'LA\MembersController');
-	Route::get(config('laraadmin.adminRoute') . '/member_dt_ajax', 'LA\MembersController@dtajax');
-
-	/* ================== Videos ================== */
-	Route::resource(config('laraadmin.adminRoute') . '/videos', 'LA\VideosController');
-	Route::get(config('laraadmin.adminRoute') . '/video_dt_ajax', 'LA\VideosController@dtajax');
 });

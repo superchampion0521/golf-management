@@ -4,12 +4,11 @@
  * Help: http://laraadmin.com
  */
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Dwij\Laraadmin\Models\Module;
 
-class CreateUsersTable extends Migration
+class CreatePlansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,12 +17,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Module::generate("Users", 'users', 'name', 'fa-group', [
-            ["name", "Name", "Name", false, "", 5, 250, true],
-            ["context_id", "Context", "Integer", false, "0", 0, 0, false],
-            ["email", "Email", "Email", true, "", 0, 250, false],
-            ["password", "Password", "Password", false, "", 6, 250, true],
-            ["type", "User Type", "Dropdown", false, "Employee", 0, 0, false, ["Employee", "Client"]],
+        Module::generate("Plans", 'plans', 'name', 'fa-cube', [
+            ["name", "Plan Name", "Name", false, "", 0, 256, true],
         ]);
 		
 		/*
@@ -69,8 +64,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('users')) {
-            Schema::drop('users');
+        if (Schema::hasTable('plans')) {
+            Schema::drop('plans');
         }
     }
 }

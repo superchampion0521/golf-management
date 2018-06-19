@@ -61,8 +61,6 @@
 					{{--
 					@la_input($module, 'name')
 					@la_input($module, 'address')
-					@la_input($module, 'phone')
-					@la_input($module, 'dec')
 					--}}
 				</div>
 			</div>

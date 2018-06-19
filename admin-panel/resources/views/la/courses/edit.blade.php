@@ -33,7 +33,6 @@
 					@la_form($module)
 					
 					{{--
-					@la_input($module, 'academy_id')
 					@la_input($module, 'name')
 					--}}
                     <br>
